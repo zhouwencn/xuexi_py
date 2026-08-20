@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: light; font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif; }
+  :root.dark { color-scheme: dark; }
+  * { @apply border-slate-200; }
+  html { scroll-behavior: smooth; }
+  body { @apply m-0 min-w-[320px] antialiased; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  ::selection { @apply bg-emerald-300/40 text-emerald-950; }
+  pre, code, textarea { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+}
+
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-bold text-emerald-950 shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-400 hover:shadow-md active:translate-y-0; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200 dark:hover:bg-white/[0.08]; }
+  .nav-link { @apply text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-white; }
+  .tag { @apply inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 font-medium text-slate-500 dark:border-white/10 dark:bg-white/[0.035] dark:text-slate-400; }
+  .eyebrow { @apply text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400; }
+  .section-title { @apply mt-1 text-2xl font-bold tracking-[-0.025em] text-slate-950 dark:text-white; }
+  .lesson-nav { @apply flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-semibold text-slate-800 transition hover:border-emerald-300 hover:text-emerald-600 dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-200 dark:hover:border-emerald-400/30 dark:hover:text-mint; }
+  .lesson-nav small { @apply mb-1 block text-[10px] font-medium text-slate-400; }
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(15, 118, 85, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 118, 85, .06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply rounded-full bg-slate-300/70 dark:bg-white/10; border: 3px solid transparent; background-clip: padding-box; }
+
+@media (max-width: 640px) {
+  .lesson-content { @apply space-y-10; }
+}
