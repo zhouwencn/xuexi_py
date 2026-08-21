@@ -1,5 +1,7 @@
 import { Check, Copy } from 'lucide-react'
 import { useState } from 'react'
+import { Button } from './Button'
+import { Tooltip, TooltipContent, TooltipTrigger } from './Tooltip'
 
 interface CodeBlockProps {
   code: string
@@ -23,9 +25,14 @@ export function CodeBlock({ code, language = 'python', label }: CodeBlockProps) 
           <span className={`h-2 w-2 rounded-full ${language === 'javascript' ? 'bg-amber-300' : 'bg-emerald-400'}`} />
           {label ?? language}
         </div>
-        <button onClick={copyCode} className="rounded-md p-1.5 text-slate-500 transition hover:bg-white/10 hover:text-slate-200" aria-label="复制代码">
-          {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
-        </button>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button variant="ghost" size="icon-sm" onClick={copyCode} className="h-8 w-8 text-slate-500 hover:bg-white/10 hover:text-slate-200" aria-label="复制代码">
+              {copied ? <Check size={14} className="text-emerald-400" /> : <Copy size={14} />}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>{copied ? '已复制' : '复制代码'}</TooltipContent>
+        </Tooltip>
       </div>
       <pre className="overflow-x-auto p-4 text-[13px] leading-6 text-slate-200"><code>{code}</code></pre>
     </div>

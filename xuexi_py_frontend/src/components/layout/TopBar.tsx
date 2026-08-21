@@ -1,6 +1,8 @@
 import { BookOpen, Menu, Moon, Sun } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { useCourseData } from '../../hooks/useCourseData'
+import { Button } from '../ui/Button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/Tooltip'
 
 const navItems = [
   { to: '/', label: '学习首页', end: true },
@@ -27,9 +29,14 @@ export function TopBar({ theme, onThemeToggle, onMenuToggle }: { theme: 'light' 
         </nav>
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden rounded-full border border-slate-200 px-3 py-1.5 text-[11px] font-medium text-slate-500 xl:block dark:border-white/10 dark:text-slate-400">{activeStages} 个阶段 · {lessons.length} 节课程</div>
-          <button onClick={onThemeToggle} className="grid h-9 w-9 place-items-center rounded-xl border border-slate-200 text-slate-600 transition hover:border-emerald-300 hover:text-emerald-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-emerald-400/40 dark:hover:text-mint" aria-label="切换深色模式">
-            {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline" size="icon-sm" onClick={onThemeToggle} aria-label="切换深色模式">
+                {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>{theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'}</TooltipContent>
+          </Tooltip>
         </div>
       </div>
     </header>
