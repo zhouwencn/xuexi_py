@@ -2,7 +2,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { lessons as fallbackLessons, stages as fallbackStages } from '../data/course'
 import { practiceChallenges as fallbackPracticeChallenges } from '../data/practice'
-import { fetchCourseCatalog } from '../services/courseApi'
+import { courseApiEnabled, fetchCourseCatalog } from '../services/courseApi'
 import type { CourseCatalog, Lesson, PracticeItem, Stage } from '../types/course'
 
 type CourseDataStatus = 'loading' | 'ready' | 'fallback'
@@ -32,11 +32,13 @@ const CourseDataContext = createContext<CourseDataContextValue | null>(null)
 
 export function CourseDataProvider({ children }: { children: ReactNode }) {
   const [catalog, setCatalog] = useState<CourseCatalog>(fallbackCatalog)
-  const [status, setStatus] = useState<CourseDataStatus>('loading')
+  const [status, setStatus] = useState<CourseDataStatus>(courseApiEnabled ? 'loading' : 'fallback')
   const [error, setError] = useState<string | null>(null)
   const [requestVersion, setRequestVersion] = useState(0)
 
   useEffect(() => {
+    if (!courseApiEnabled) return
+
     const controller = new AbortController()
 
     fetchCourseCatalog(controller.signal)
@@ -57,6 +59,10 @@ export function CourseDataProvider({ children }: { children: ReactNode }) {
   }, [requestVersion])
 
   const reload = useCallback(() => {
+    if (!courseApiEnabled) {
+      setStatus('fallback')
+      return
+    }
     setStatus('loading')
     setError(null)
     setRequestVersion((current) => current + 1)

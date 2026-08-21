@@ -1,7 +1,12 @@
 import type { ApiResponse, CourseCatalog } from '../types/course'
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? '/api/v1').replace(/\/$/, '')
+const API_BASE_URL = (
+  import.meta.env.VITE_API_BASE_URL
+  ?? (import.meta.env.DEV ? '/api/v1' : '')
+).replace(/\/$/, '')
 const COURSE_ID = 'python-from-js'
+
+export const courseApiEnabled = Boolean(API_BASE_URL)
 
 export class ApiBusinessError extends Error {
   constructor(
@@ -15,6 +20,10 @@ export class ApiBusinessError extends Error {
 }
 
 export async function fetchCourseCatalog(signal?: AbortSignal): Promise<CourseCatalog> {
+  if (!courseApiEnabled) {
+    throw new ApiBusinessError('生产环境未配置课程 API', -1, 0)
+  }
+
   const response = await fetch(`${API_BASE_URL}/courses/${COURSE_ID}/catalog`, {
     headers: { Accept: 'application/json' },
     signal,
