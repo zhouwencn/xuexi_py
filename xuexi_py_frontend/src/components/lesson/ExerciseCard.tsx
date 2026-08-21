@@ -3,6 +3,7 @@ import { useState } from 'react'
 import type { Exercise } from '../../types/course'
 import { useLearningProgress } from '../../hooks/useLearningProgress'
 import { CodeBlock } from '../ui/CodeBlock'
+import { Button } from '../ui/Button'
 
 export function ExerciseCard({ exercise, lessonId, onCorrect }: { exercise: Exercise; lessonId?: string; onCorrect?: () => void }) {
   const { recordExercise } = useLearningProgress()
@@ -29,7 +30,7 @@ export function ExerciseCard({ exercise, lessonId, onCorrect }: { exercise: Exer
       </div>
       {submitted && <div className={`mt-4 flex gap-3 rounded-xl p-4 text-sm ${isCorrect ? 'bg-emerald-100/70 text-emerald-900 dark:bg-emerald-400/10 dark:text-emerald-200' : 'bg-rose-100/70 text-rose-900 dark:bg-rose-400/10 dark:text-rose-200'}`}>{isCorrect ? <CheckCircle2 className="mt-0.5 shrink-0" size={18} /> : <XCircle className="mt-0.5 shrink-0" size={18} />}<div><strong>{isCorrect ? '判断正确' : '再看一眼'}</strong><p className="mt-1 leading-6 opacity-80">{exercise.explanation}</p></div></div>}
       <div className="mt-5 flex justify-end">
-        {submitted ? <button onClick={() => { setSelected(undefined); setSubmitted(false) }} className="btn-secondary"><RotateCcw size={15} /> 再做一次</button> : <button onClick={submit} disabled={!selected} className="btn-primary disabled:cursor-not-allowed disabled:opacity-40">检查答案</button>}
+        {submitted ? <Button variant="secondary" onClick={() => { setSelected(undefined); setSubmitted(false) }}><RotateCcw size={15} /> 再做一次</Button> : <Button onClick={submit} disabled={!selected}>检查答案</Button>}
       </div>
     </div>
   )
