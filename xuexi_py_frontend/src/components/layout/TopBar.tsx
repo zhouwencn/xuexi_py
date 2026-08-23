@@ -1,8 +1,9 @@
-import { BookOpen, Menu, Moon, Sun } from 'lucide-react'
+import { BookOpen, Menu, Moon, Sun, UserRound } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { useCourseData } from '../../hooks/useCourseData'
 import { Button } from '../ui/Button'
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/Tooltip'
+import { useAuth } from '../../hooks/useAuth'
 
 const navItems = [
   { to: '/', label: '学习首页', end: true },
@@ -17,6 +18,7 @@ const navItems = [
 
 export function TopBar({ theme, onThemeToggle, onMenuToggle }: { theme: 'light' | 'dark'; onThemeToggle: () => void; onMenuToggle: () => void }) {
   const { lessons, stages } = useCourseData()
+  const { status } = useAuth()
   const activeStages = stages.filter((stage) => stage.status === 'active').length
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl dark:border-white/[0.08] dark:bg-[#07110f]/85">
@@ -31,6 +33,7 @@ export function TopBar({ theme, onThemeToggle, onMenuToggle }: { theme: 'light' 
         </nav>
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden rounded-full border border-slate-200 px-3 py-1.5 text-[11px] font-medium text-slate-500 xl:block dark:border-white/10 dark:text-slate-400">{activeStages} 个阶段 · {lessons.length} 节课程</div>
+          <Button asChild variant="outline" size="icon-sm"><NavLink to="/account" aria-label="账号与云端进度"><UserRound size={16} className={status === 'authenticated' ? 'text-emerald-500' : ''} /></NavLink></Button>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button variant="outline" size="icon-sm" onClick={onThemeToggle} aria-label="切换深色模式">

@@ -172,6 +172,17 @@ export interface LabStepSubmission {
   completedAt: string
 }
 
+export type ReviewRating = 'again' | 'hard' | 'good' | 'easy'
+
+export interface ReviewItem {
+  lessonId: string
+  dueAt: string
+  intervalDays: number
+  ease: number
+  repetitions: number
+  lastReviewedAt: string
+}
+
 export interface LearningState {
   completed: string[]
   bookmarked: string[]
@@ -182,4 +193,5 @@ export interface LearningState {
   exerciseResults: Record<string, ExerciseResult>
   projectSubmissions: Record<string, ProjectTaskSubmission>
   labSubmissions: Record<string, LabStepSubmission>
+  reviewItems: Record<string, ReviewItem>
 }

@@ -12,6 +12,10 @@ import { SkillsPage } from './pages/SkillsPage'
 import { ExpertPage } from './pages/ExpertPage'
 import { LabDetailPage } from './pages/LabDetailPage'
 import { LabsPage } from './pages/LabsPage'
+import { AccountPage } from './pages/AccountPage'
+import { DiagnosticPage } from './pages/DiagnosticPage'
+import { EnvironmentPage } from './pages/EnvironmentPage'
+import { ReviewPage } from './pages/ReviewPage'
 
 export default function App() {
   return (
@@ -28,6 +32,10 @@ export default function App() {
       <Route path="/labs" element={<LabsPage />} />
       <Route path="/labs/:labId" element={<LabDetailPage />} />
       <Route path="/expert" element={<ExpertPage />} />
+      <Route path="/account" element={<AccountPage />} />
+      <Route path="/review" element={<ReviewPage />} />
+      <Route path="/diagnostic" element={<DiagnosticPage />} />
+      <Route path="/environment" element={<EnvironmentPage />} />
       <Route path="/learn/:lessonId" element={<LessonPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

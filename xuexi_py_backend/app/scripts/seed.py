@@ -10,6 +10,8 @@ from app.models import Course, Exercise, Lab, LabStep, Lesson, Project, ProjectT
 SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "seed_data.json"
 LEARNING_SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "learning_data.json"
 ADVANCED_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "advanced_catalog.json"
+HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "db" / "hidden_tests.json"
+EXPERT_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "expert_lessons.json"
 
 
 def upsert(session: Session, model: type[Any], identity: str, values: dict[str, Any]) -> Any:
@@ -24,11 +26,61 @@ def upsert(session: Session, model: type[Any], identity: str, values: dict[str, 
     return instance
 
 
+def expand_expert_lesson(source: dict[str, Any], stage_id: str) -> dict[str, Any]:
+    return {
+        "id": source["id"],
+        "stageId": stage_id,
+        "order": source["order"],
+        "title": source["title"],
+        "subtitle": source["subtitle"],
+        "duration": source["duration"],
+        "difficulty": 5,
+        "importance": "must",
+        "status": "available",
+        "oneLiner": source["oneLiner"],
+        "comparison": {
+            "javascript": "// 专家阶段不再依赖 JavaScript 语法映射",
+            "python": source["code"],
+            "note": "从可观察行为、运行机制和工程权衡三个层次理解代码。",
+        },
+        "explanation": [
+            {"code": f"关键点 {index}", "description": description}
+            for index, description in enumerate(source["concepts"], start=1)
+        ],
+        "commonErrors": [{"title": "专家阶段高频误区", "description": source["error"]}],
+        "realWorld": {
+            "title": "最小验证实验",
+            "description": "运行、修改并记录证据，不要只记结论。",
+            "code": source["code"],
+        },
+        "exercise": {
+            "type": "choice",
+            "prompt": source["question"],
+            "options": source["options"],
+            "answer": source["answer"],
+            "explanation": source["explanation"],
+            "difficulty": 5,
+        },
+        "simulatedOutput": "请运行并记录你的观察",
+        "skillIds": source["skillIds"],
+    }
+
+
 def seed() -> None:
     data = json.loads(SEED_PATH.read_text(encoding="utf-8"))
     learning_data = json.loads(LEARNING_SEED_PATH.read_text(encoding="utf-8"))
     advanced_data = json.loads(ADVANCED_SEED_PATH.read_text(encoding="utf-8"))
+    hidden_tests = json.loads(HIDDEN_TESTS_PATH.read_text(encoding="utf-8"))
+    expert_data = json.loads(EXPERT_SEED_PATH.read_text(encoding="utf-8"))
     course_data = data["course"]
+    expert_stage = {
+        **expert_data["stage"],
+        "lessonCount": len(expert_data["lessons"]),
+        "lessonIds": [item["id"] for item in expert_data["lessons"]],
+    }
+    stage_data_list = [*data["stages"], expert_stage]
+    expert_lessons = [expand_expert_lesson(item, expert_stage["id"]) for item in expert_data["lessons"]]
+    lesson_data_list = [*data["lessons"], *expert_lessons]
 
     with SessionLocal() as session:
         upsert(
@@ -42,7 +94,7 @@ def seed() -> None:
             },
         )
 
-        for stage in data["stages"]:
+        for stage in stage_data_list:
             upsert(
                 session,
                 Stage,
@@ -57,7 +109,7 @@ def seed() -> None:
                 },
             )
 
-        for lesson in data["lessons"]:
+        for lesson in lesson_data_list:
             upsert(
                 session,
                 Lesson,
@@ -99,6 +151,7 @@ def seed() -> None:
                     "starter_code": exercise.get("starterCode"),
                     "test_cases": exercise.get("testCases", []),
                     "hints": exercise.get("hints", []),
+                    "hidden_test_cases": [],
                 },
             )
 
@@ -128,6 +181,7 @@ def seed() -> None:
                     "starter_code": exercise.get("starterCode"),
                     "test_cases": exercise.get("testCases", []),
                     "hints": exercise.get("hints", []),
+                    "hidden_test_cases": hidden_tests.get(challenge["id"], []),
                 },
             )
 
@@ -152,7 +206,7 @@ def seed() -> None:
 
         session.flush()
         lessons_by_stage: dict[str, list[Lesson]] = {}
-        for lesson_data in data["lessons"]:
+        for lesson_data in lesson_data_list:
             lesson = session.get(Lesson, lesson_data["id"])
             if lesson is not None:
                 lessons_by_stage.setdefault(lesson.stage_id, []).append(lesson)
@@ -161,6 +215,15 @@ def seed() -> None:
             skill = skill_instances[skill_data["id"]]
             skill.lessons = lessons_by_stage.get(skill.stage_id, [])
             skill.prerequisites = [skill_instances[item] for item in skill_data["prerequisiteIds"]]
+
+        for lesson_data in expert_lessons:
+            lesson = session.get(Lesson, lesson_data["id"])
+            if lesson is None:
+                continue
+            for skill_id in lesson_data["skillIds"]:
+                skill = skill_instances[skill_id]
+                if lesson not in skill.lessons:
+                    skill.lessons.append(lesson)
 
         for project_data in learning_data["projects"]:
             project = upsert(
@@ -233,8 +296,8 @@ def seed() -> None:
         session.commit()
 
     print(
-        f"Seed 完成：{len(data['stages'])} 个阶段，"
-        f"{len(data['lessons'])} 节课，{len(challenges)} 道额外练习，"
+        f"Seed 完成：{len(stage_data_list)} 个阶段，"
+        f"{len(lesson_data_list)} 节课，{len(challenges)} 道额外练习，"
         f"{len(skill_data_list)} 项技能，{len(learning_data['projects'])} 个项目，"
         f"{len(advanced_data['labs'])} 个工程实验。"
     )

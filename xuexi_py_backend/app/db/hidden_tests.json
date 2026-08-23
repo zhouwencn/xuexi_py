@@ -1,0 +1,12 @@
+{
+  "code-normalize-names": [{"name": "隐藏边界测试", "code": "assert normalize_names([' A ', ' ', 'a']) == ['a', 'a']"}],
+  "code-paid-total": [{"name": "隐藏缺省状态测试", "code": "assert paid_total([{'amount': 9}, {'amount': 3, 'paid': True}]) == 3"}],
+  "code-safe-divide": [{"name": "隐藏负数测试", "code": "assert safe_divide(-9, 3) == -3"}],
+  "code-chunk-items": [{"name": "隐藏单元素批次测试", "code": "assert list(chunk_items([1, 2, 3], 1)) == [[1], [2], [3]]"}],
+  "code-api-response": [{"name": "隐藏字符串数据测试", "code": "assert success_response('ok')['data'] == 'ok'"}],
+  "code-dedupe-order": [{"name": "隐藏重复边界测试", "code": "assert dedupe_preserving_order([1, 1, 1]) == [1]"}],
+  "code-retry-delays": [{"name": "隐藏默认参数测试", "code": "assert retry_delays(3) == [0.5, 1.0, 2.0]"}],
+  "code-bounded-map": [{"name": "隐藏异步结果测试", "code": "import asyncio\nasync def worker(x): return x + 1\nassert asyncio.run(bounded_map([1, 3], worker, 1)) == [2, 4]"}],
+  "code-ttl-decision": [{"name": "隐藏零 TTL 测试", "code": "assert is_expired(10, 0, 10) is True"}],
+  "code-percentile": [{"name": "隐藏非法分位测试", "code": "\ntry:\n    nearest_rank_percentile([1], 0)\n    assert False\nexcept ValueError:\n    pass"}]
+}

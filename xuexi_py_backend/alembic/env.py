@@ -5,7 +5,22 @@ from sqlalchemy import engine_from_config, pool
 
 from app.core.config import get_settings
 from app.db.base import Base
-from app.models import Course, Exercise, Lab, LabStep, Lesson, Project, ProjectTask, Skill, Stage  # noqa: F401
+from app.models import (  # noqa: F401
+    CodeSubmission,
+    Course,
+    DiagnosticAttempt,
+    Exercise,
+    Lab,
+    LabEnvironment,
+    LabStep,
+    Lesson,
+    Project,
+    ProjectTask,
+    Skill,
+    Stage,
+    User,
+    UserProgress,
+)
 
 config = context.config
 config.set_main_option("sqlalchemy.url", get_settings().database_url)

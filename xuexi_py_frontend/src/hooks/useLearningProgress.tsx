@@ -1,7 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import type { LabStepSubmission, LearningState, ProjectTaskSubmission } from '../types/course'
+import type { LabStepSubmission, LearningState, ProjectTaskSubmission, ReviewItem, ReviewRating } from '../types/course'
 import { useCourseData } from './useCourseData'
+import { useAuth } from './useAuth'
+import { fetchCloudProgress, saveCloudProgress } from '../services/accountApi'
 
 const STORAGE_KEY = 'pypath-learning-state-v1'
 const initialState: LearningState = {
@@ -14,6 +16,19 @@ const initialState: LearningState = {
   exerciseResults: {},
   projectSubmissions: {},
   labSubmissions: {},
+  reviewItems: {},
+}
+
+function scheduleReview(previous: ReviewItem | undefined, rating: ReviewRating): ReviewItem {
+  const now = new Date()
+  const ease = Math.max(1.3, (previous?.ease ?? 2.5) + (rating === 'easy' ? .15 : rating === 'hard' ? -.15 : rating === 'again' ? -.2 : 0))
+  const repetitions = rating === 'again' ? 0 : (previous?.repetitions ?? 0) + 1
+  let intervalDays = 0
+  if (rating === 'hard') intervalDays = Math.max(1, Math.round((previous?.intervalDays || 1) * 1.2))
+  if (rating === 'good') intervalDays = repetitions === 1 ? 1 : repetitions === 2 ? 3 : Math.max(1, Math.round((previous?.intervalDays || 1) * ease))
+  if (rating === 'easy') intervalDays = repetitions === 1 ? 4 : Math.max(4, Math.round((previous?.intervalDays || 1) * ease * 1.3))
+  const due = rating === 'again' ? new Date(now.getTime() + 10 * 60_000) : new Date(now.getTime() + intervalDays * 86_400_000)
+  return { lessonId: previous?.lessonId ?? '', dueAt: due.toISOString(), intervalDays, ease, repetitions, lastReviewedAt: now.toISOString() }
 }
 
 export interface SkillMastery {
@@ -40,6 +55,10 @@ interface LearningProgressContextValue extends LearningState {
   getProjectProgress: (projectId: string) => number
   saveLabStepSubmission: (stepId: string, submission: Omit<LabStepSubmission, 'completedAt'>) => void
   getLabProgress: (labId: string) => number
+  gradeReview: (lessonId: string, rating: ReviewRating) => void
+  cloudSyncStatus: 'idle' | 'syncing' | 'synced' | 'error'
+  uploadCloudProgress: () => Promise<void>
+  downloadCloudProgress: () => Promise<void>
 }
 
 const LearningProgressContext = createContext<LearningProgressContextValue | null>(null)
@@ -55,7 +74,9 @@ function readState(): LearningState {
 
 export function LearningProgressProvider({ children }: { children: ReactNode }) {
   const { labs, lessons, projects, skills } = useCourseData()
+  const { token } = useAuth()
   const [state, setState] = useState<LearningState>(readState)
+  const [cloudSyncStatus, setCloudSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>('idle')
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
@@ -119,6 +140,13 @@ export function LearningProgressProvider({ children }: { children: ReactNode }) 
               lastAttemptAt: new Date().toISOString(),
             },
           },
+          reviewItems: {
+            ...(current.reviewItems ?? {}),
+            [lessonId]: {
+              ...scheduleReview(current.reviewItems?.[lessonId], correct ? 'good' : 'again'),
+              lessonId,
+            },
+          },
           wrongLessonIds: correct
             ? current.wrongLessonIds.filter((id) => id !== lessonId)
             : current.wrongLessonIds.includes(lessonId)
@@ -157,8 +185,40 @@ export function LearningProgressProvider({ children }: { children: ReactNode }) 
         const completed = lab.steps.filter((step) => labSubmissions[step.id]).length
         return Math.round(completed / lab.steps.length * 100)
       },
+      gradeReview: (lessonId, rating) => setState((current) => ({
+        ...current,
+        reviewItems: {
+          ...(current.reviewItems ?? {}),
+          [lessonId]: { ...scheduleReview(current.reviewItems?.[lessonId], rating), lessonId },
+        },
+      })),
+      cloudSyncStatus,
+      uploadCloudProgress: async () => {
+        if (!token) return
+        setCloudSyncStatus('syncing')
+        try {
+          const remote = await fetchCloudProgress(token)
+          await saveCloudProgress(token, state, remote.version)
+          setCloudSyncStatus('synced')
+        } catch {
+          setCloudSyncStatus('error')
+          throw new Error('云端上传失败')
+        }
+      },
+      downloadCloudProgress: async () => {
+        if (!token) return
+        setCloudSyncStatus('syncing')
+        try {
+          const remote = await fetchCloudProgress(token)
+          if (remote.version > 0) setState({ ...initialState, ...remote.state })
+          setCloudSyncStatus('synced')
+        } catch {
+          setCloudSyncStatus('error')
+          throw new Error('云端下载失败')
+        }
+      },
     }
-  }, [labs, lessons, projects, skills, state])
+  }, [cloudSyncStatus, labs, lessons, projects, skills, state, token])
 
   return <LearningProgressContext.Provider value={value}>{children}</LearningProgressContext.Provider>
 }

@@ -5,6 +5,7 @@ import { practiceChallenges as fallbackPracticeChallenges } from '../data/practi
 import { projects as fallbackProjects } from '../data/projects'
 import { skills as fallbackSkills } from '../data/skills'
 import { labs as fallbackLabs } from '../data/advancedCatalog'
+import { expertLessons, expertStage } from '../data/expertCatalog'
 import { courseApiEnabled, fetchCourseCatalog } from '../services/courseApi'
 import type { CourseCatalog, LearningLab, Lesson, PracticeItem, Project, Skill, Stage } from '../types/course'
 
@@ -49,8 +50,8 @@ const fallbackCatalog: CourseCatalog = normalizeCatalog({
     title: 'PyPath · Python 学习路径',
     description: '面向有 JavaScript 基础的开发者，通过真实代码阅读和练习系统学习 Python。',
   },
-  stages: fallbackStages,
-  lessons: fallbackLessons,
+  stages: [...fallbackStages, expertStage],
+  lessons: [...fallbackLessons, ...expertLessons],
   practiceChallenges: fallbackPracticeChallenges,
   skills: fallbackSkills,
   projects: fallbackProjects,

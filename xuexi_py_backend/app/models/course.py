@@ -100,6 +100,7 @@ class Exercise(Base):
     starter_code: Mapped[str | None] = mapped_column(Text, nullable=True)
     test_cases: Mapped[list[dict[str, Any]]] = mapped_column(JSONB, default=list, server_default="[]")
     hints: Mapped[list[str]] = mapped_column(JSONB, default=list, server_default="[]")
+    hidden_test_cases: Mapped[list[dict[str, Any]]] = mapped_column(JSONB, default=list, server_default="[]")
 
     lesson: Mapped[Lesson] = relationship(back_populates="exercises")
 

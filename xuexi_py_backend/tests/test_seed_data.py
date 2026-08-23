@@ -4,6 +4,8 @@ from pathlib import Path
 SEED_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "seed_data.json"
 LEARNING_SEED_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "learning_data.json"
 ADVANCED_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "advanced_catalog.json"
+EXPERT_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "expert_lessons.json"
+HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "hidden_tests.json"
 
 
 def test_seed_data_relationships_are_complete() -> None:
@@ -71,3 +73,16 @@ def test_advanced_catalog_covers_expert_skills_labs_and_question_bank() -> None:
         "incident",
         "design",
     }
+
+
+def test_expert_lessons_and_hidden_tests_are_complete() -> None:
+    expert = json.loads(EXPERT_SEED_PATH.read_text(encoding="utf-8"))
+    hidden_tests = json.loads(HIDDEN_TESTS_PATH.read_text(encoding="utf-8"))
+
+    assert expert["stage"]["order"] == 14
+    assert len(expert["lessons"]) == 12
+    assert len({lesson["id"] for lesson in expert["lessons"]}) == 12
+    assert all(lesson["difficulty"] if "difficulty" in lesson else 5 for lesson in expert["lessons"])
+    assert all(lesson["skillIds"] for lesson in expert["lessons"])
+    assert len(hidden_tests) == 10
+    assert all(tests and all(item["code"] for item in tests) for tests in hidden_tests.values())
