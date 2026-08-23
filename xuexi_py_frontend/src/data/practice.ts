@@ -1,4 +1,5 @@
 import type { PracticeItem } from '../types/course'
+import { advancedPracticeChallenges } from './advancedCatalog'
 
 export const practiceChallenges: PracticeItem[] = [
   {
@@ -41,4 +42,25 @@ export const practiceChallenges: PracticeItem[] = [
     id: 'challenge-sql-review', lessonId: 'sql-basics', title: '找错误：SQL 安全', stageId: 'database',
     exercise: { type: 'debug', prompt: '下面 AI 生成的查询最大的问题是什么？', code: `query = f"SELECT * FROM users WHERE email = '{email}'"\nresult = session.execute(query)`, options: ['把用户输入拼进 SQL，存在注入风险', 'SELECT 不能查询 users', 'Python 不能使用字符串'], answer: '把用户输入拼进 SQL，存在注入风险', explanation: '外部输入必须通过参数化查询绑定，不能直接格式化进 SQL。' },
   },
+  {
+    id: 'code-normalize-names', lessonId: 'string-methods', title: '代码实验：清洗用户名', stageId: 'structures',
+    exercise: { id: 'code-normalize-names', type: 'code', difficulty: 2, prompt: '实现 normalize_names：去除首尾空白、转换为小写，并忽略清理后为空的名字。', options: [], starterCode: `def normalize_names(names: list[str]) -> list[str]:\n    # 在这里完成代码\n    pass`, answer: `def normalize_names(names: list[str]) -> list[str]:\n    return [name.strip().lower() for name in names if name.strip()]`, explanation: '先用 strip 清理，再过滤空字符串，最后用 lower 统一大小写。', hints: ['可以先对单个 name 调用 strip()', '列表推导式可以同时完成转换和过滤'], testCases: [{ name: '清理空白和大小写', code: `assert normalize_names([" Ada ", "TOM"]) == ["ada", "tom"]` }, { name: '忽略空名字', code: `assert normalize_names([" ", "Lin", ""]) == ["lin"]` }, { name: '处理空列表', code: `assert normalize_names([]) == []` }] },
+  },
+  {
+    id: 'code-paid-total', lessonId: 'list-comprehensions', title: '代码实验：统计已支付金额', stageId: 'structures',
+    exercise: { id: 'code-paid-total', type: 'code', difficulty: 3, prompt: '实现 paid_total，只汇总 paid 为 True 的订单金额。', options: [], starterCode: `def paid_total(orders: list[dict]) -> int:\n    # 在这里完成代码\n    pass`, answer: `def paid_total(orders: list[dict]) -> int:\n    return sum(order["amount"] for order in orders if order.get("paid"))`, explanation: '生成器表达式负责过滤已支付订单，sum 负责累计金额。', hints: ['使用 order.get("paid") 判断状态', 'sum 可以接收生成器表达式'], testCases: [{ name: '只统计已支付订单', code: `assert paid_total([{"amount": 20, "paid": True}, {"amount": 8, "paid": False}]) == 20` }, { name: '累计多笔金额', code: `assert paid_total([{"amount": 20, "paid": True}, {"amount": 30, "paid": True}]) == 50` }, { name: '空列表结果为零', code: `assert paid_total([]) == 0` }] },
+  },
+  {
+    id: 'code-safe-divide', lessonId: 'except-block', title: '代码实验：安全除法', stageId: 'errors',
+    exercise: { id: 'code-safe-divide', type: 'code', difficulty: 3, prompt: '实现 safe_divide：正常返回除法结果，除数为零时返回 None，不要吞掉其他异常。', options: [], starterCode: `def safe_divide(left, right):\n    # 在这里完成代码\n    pass`, answer: `def safe_divide(left, right):\n    try:\n        return left / right\n    except ZeroDivisionError:\n        return None`, explanation: '只捕获预期的 ZeroDivisionError，其他类型错误应继续暴露。', hints: ['使用 try/except', '不要使用 except Exception'], testCases: [{ name: '正常除法', code: `assert safe_divide(9, 3) == 3` }, { name: '处理零除', code: `assert safe_divide(9, 0) is None` }, { name: '保留浮点结果', code: `assert safe_divide(5, 2) == 2.5` }] },
+  },
+  {
+    id: 'code-chunk-items', lessonId: 'generators', title: '代码实验：分批生成数据', stageId: 'advanced',
+    exercise: { id: 'code-chunk-items', type: 'code', difficulty: 4, prompt: '实现 chunk_items，将列表按 size 分批，并通过 yield 逐批返回。', options: [], starterCode: `def chunk_items(items, size):\n    # 在这里完成代码\n    pass`, answer: `def chunk_items(items, size):\n    if size <= 0:\n        raise ValueError("size must be positive")\n    for index in range(0, len(items), size):\n        yield items[index:index + size]`, explanation: 'range 按 size 递增，切片取得当前批次，yield 让函数成为生成器。', hints: ['range 的步长可以设置为 size', '使用 items[index:index + size] 取得一批'], testCases: [{ name: '正确分批', code: `assert list(chunk_items([1, 2, 3, 4, 5], 2)) == [[1, 2], [3, 4], [5]]` }, { name: '空列表', code: `assert list(chunk_items([], 3)) == []` }, { name: '批次大于数据量', code: `assert list(chunk_items([1, 2], 5)) == [[1, 2]]` }] },
+  },
+  {
+    id: 'code-api-response', lessonId: 'api-responses', title: '代码实验：统一 API 响应', stageId: 'web',
+    exercise: { id: 'code-api-response', type: 'code', difficulty: 3, prompt: '实现 success_response，返回包含 code、message、data 的字典。', options: [], starterCode: `def success_response(data):\n    # 在这里完成代码\n    pass`, answer: `def success_response(data):\n    return {"code": 0, "message": "success", "data": data}`, explanation: '统一响应让前端可以稳定读取业务状态、提示和实际数据。', hints: ['返回一个字典', '成功业务码固定为 0'], testCases: [{ name: '包含统一字段', code: `assert success_response({"id": 1}) == {"code": 0, "message": "success", "data": {"id": 1}}` }, { name: '允许空数据', code: `assert success_response(None)["data"] is None` }, { name: '业务码为零', code: `assert success_response([])["code"] == 0` }] },
+  },
+  ...advancedPracticeChallenges,
 ]

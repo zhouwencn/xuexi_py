@@ -1,3 +1,4 @@
 from app.models.course import Course, Exercise, Lesson, Stage
+from app.models.learning import Lab, LabStep, Project, ProjectTask, Skill
 
-__all__ = ["Course", "Exercise", "Lesson", "Stage"]
+__all__ = ["Course", "Exercise", "Lab", "LabStep", "Lesson", "Project", "ProjectTask", "Skill", "Stage"]

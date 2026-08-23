@@ -2,8 +2,11 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { lessons as fallbackLessons, stages as fallbackStages } from '../data/course'
 import { practiceChallenges as fallbackPracticeChallenges } from '../data/practice'
+import { projects as fallbackProjects } from '../data/projects'
+import { skills as fallbackSkills } from '../data/skills'
+import { labs as fallbackLabs } from '../data/advancedCatalog'
 import { courseApiEnabled, fetchCourseCatalog } from '../services/courseApi'
-import type { CourseCatalog, Lesson, PracticeItem, Stage } from '../types/course'
+import type { CourseCatalog, LearningLab, Lesson, PracticeItem, Project, Skill, Stage } from '../types/course'
 
 type CourseDataStatus = 'loading' | 'ready' | 'fallback'
 
@@ -11,13 +14,36 @@ interface CourseDataContextValue {
   lessons: Lesson[]
   stages: Stage[]
   practiceChallenges: PracticeItem[]
+  skills: Skill[]
+  projects: Project[]
+  labs: LearningLab[]
   status: CourseDataStatus
   error: string | null
   getLessonById: (id?: string) => Lesson | undefined
   reload: () => void
 }
 
-const fallbackCatalog: CourseCatalog = {
+function normalizeCatalog(catalog: CourseCatalog): CourseCatalog {
+  const normalizedChallenges = catalog.practiceChallenges.map((item) => ({
+    ...item,
+    exercise: {
+      ...item.exercise,
+      id: item.exercise.id ?? item.id,
+      difficulty: item.exercise.difficulty ?? catalog.lessons.find((lesson) => lesson.id === item.lessonId)?.difficulty ?? 2,
+    },
+  }))
+  const lessons = catalog.lessons.map((lesson) => {
+    const primary = { ...lesson.exercise, id: lesson.exercise.id ?? `lesson:${lesson.id}`, difficulty: lesson.exercise.difficulty ?? lesson.difficulty }
+    const candidates = lesson.exercises?.length
+      ? lesson.exercises.map((exercise, index) => ({ ...exercise, id: exercise.id ?? `${lesson.id}:${index + 1}` }))
+      : [primary, ...normalizedChallenges.filter((item) => item.lessonId === lesson.id).map((item) => item.exercise)]
+    const unique = [...new Map(candidates.map((exercise) => [exercise.id, exercise])).values()]
+    return { ...lesson, exercise: primary, exercises: unique }
+  })
+  return { ...catalog, lessons, practiceChallenges: normalizedChallenges }
+}
+
+const fallbackCatalog: CourseCatalog = normalizeCatalog({
   course: {
     id: 'python-from-js',
     title: 'PyPath · Python 学习路径',
@@ -26,7 +52,10 @@ const fallbackCatalog: CourseCatalog = {
   stages: fallbackStages,
   lessons: fallbackLessons,
   practiceChallenges: fallbackPracticeChallenges,
-}
+  skills: fallbackSkills,
+  projects: fallbackProjects,
+  labs: fallbackLabs,
+})
 
 const CourseDataContext = createContext<CourseDataContextValue | null>(null)
 
@@ -43,7 +72,7 @@ export function CourseDataProvider({ children }: { children: ReactNode }) {
 
     fetchCourseCatalog(controller.signal)
       .then((result) => {
-        setCatalog(result)
+        setCatalog(normalizeCatalog(result))
         setStatus('ready')
       })
       .catch((reason: unknown) => {
@@ -71,6 +100,9 @@ export function CourseDataProvider({ children }: { children: ReactNode }) {
     lessons: catalog.lessons,
     stages: catalog.stages,
     practiceChallenges: catalog.practiceChallenges,
+    skills: catalog.skills,
+    projects: catalog.projects,
+    labs: catalog.labs,
     status,
     error,
     getLessonById: (id) => catalog.lessons.find((lesson) => lesson.id === id),

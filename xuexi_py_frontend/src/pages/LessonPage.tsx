@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, Bookmark, Check, CheckCircle2, Code2, GitBranch,
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { AppShell } from '../components/layout/AppShell'
 import { ExerciseCard } from '../components/lesson/ExerciseCard'
+import { CodeExerciseCard } from '../components/lesson/CodeExerciseCard'
 import { SimulatedRunner } from '../components/lesson/SimulatedRunner'
 import { CodeBlock } from '../components/ui/CodeBlock'
 import { Button } from '../components/ui/Button'
@@ -12,7 +13,7 @@ import { getAdjacentLessons } from '../utils/course'
 
 export function LessonPage() {
   const { lessonId } = useParams()
-  const { getLessonById, lessons, stages } = useCourseData()
+  const { getLessonById, lessons, skills, stages } = useCourseData()
   const lesson = getLessonById(lessonId)
   const { toggleComplete, toggleBookmark, isComplete, isBookmarked } = useLearningProgress()
   if (!lesson) return <Navigate to="/learn/what-is-python" replace />
@@ -20,6 +21,8 @@ export function LessonPage() {
   const stage = stages.find((item) => item.id === lesson.stageId)
   const done = isComplete(lesson.id)
   const bookmarked = isBookmarked(lesson.id)
+  const lessonSkills = skills.filter((skill) => skill.lessonIds.includes(lesson.id))
+  const lessonExercises = lesson.exercises ?? [lesson.exercise]
 
   return (
     <AppShell showSidebar>
@@ -28,6 +31,7 @@ export function LessonPage() {
         <header className="mb-10 border-b border-slate-200 pb-8 dark:border-white/10">
           <div className="flex items-start justify-between gap-6"><div><div className="mb-3 font-mono text-xs font-semibold text-emerald-600 dark:text-emerald-400">LESSON {String(lesson.order).padStart(2, '0')}</div><h1 className="text-3xl font-black tracking-[-0.035em] text-slate-950 sm:text-4xl dark:text-white">{lesson.title}</h1><p className="mt-3 text-base text-slate-500 dark:text-slate-400">{lesson.subtitle}</p></div><button onClick={() => toggleBookmark(lesson.id)} className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl border transition ${bookmarked ? 'border-amber-300 bg-amber-50 text-amber-500 dark:bg-amber-400/10' : 'border-slate-200 text-slate-400 hover:text-slate-700 dark:border-white/10 dark:hover:text-white'}`} aria-label="收藏本节"><Bookmark size={18} fill={bookmarked ? 'currentColor' : 'none'} /></button></div>
           <div className="mt-6"><LessonMeta difficulty={lesson.difficulty} importance={lesson.importance} duration={lesson.duration} /></div>
+          {lessonSkills.length > 0 && <div className="mt-4 flex flex-wrap gap-2">{lessonSkills.map((skill) => <Link key={skill.id} to="/skills" className="rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-700 hover:bg-violet-100 dark:bg-violet-400/10 dark:text-violet-200">能力 · {skill.title}</Link>)}</div>}
         </header>
 
         <div className="lesson-content space-y-12">
@@ -41,7 +45,7 @@ export function LessonPage() {
 
           <section><SectionHeading number="05" title="AI 项目中会怎么出现" /><div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-white/10 dark:bg-white/[0.025]"><div className="mb-4 flex items-start gap-3"><span className="grid h-9 w-9 place-items-center rounded-xl bg-violet-100 text-violet-600 dark:bg-violet-400/10 dark:text-violet-300"><GitBranch size={17} /></span><div><h3 className="font-bold text-slate-900 dark:text-white">{lesson.realWorld.title}</h3><p className="mt-1 text-sm leading-6 text-slate-500">{lesson.realWorld.description}</p></div></div><CodeBlock code={lesson.realWorld.code} /></div></section>
 
-          <section><SectionHeading number="06" title="小练习" /><ExerciseCard key={lesson.id} exercise={lesson.exercise} lessonId={lesson.id} /></section>
+          <section><SectionHeading number="06" title="分层练习" subtitle={`${lessonExercises.length} 道练习，从理解检查逐步过渡到独立编码`} /><div className="space-y-5">{lessonExercises.map((exercise, index) => exercise.type === 'code' ? <CodeExerciseCard key={exercise.id ?? index} exercise={exercise} lessonId={lesson.id} /> : <ExerciseCard key={exercise.id ?? index} exercise={exercise} lessonId={lesson.id} />)}</div></section>
 
           <section><SectionHeading number="07" title="运行代码" subtitle="代码在浏览器内通过 Pyodide 真实执行，不会上传到服务器" /><SimulatedRunner key={lesson.id} code={lesson.comparison.python} /></section>
         </div>

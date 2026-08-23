@@ -5,6 +5,19 @@ interface PyodideRuntime {
   runPythonAsync: (code: string) => Promise<unknown>
 }
 
+export interface CodeTestResult {
+  name: string
+  passed: boolean
+  error: string
+}
+
+export interface CodeTestRun {
+  passed: number
+  total: number
+  output: string
+  results: CodeTestResult[]
+}
+
 declare global {
   interface Window {
     loadPyodide?: (options: { indexURL: string }) => Promise<PyodideRuntime>
@@ -77,5 +90,62 @@ _buffer.getvalue()
     }
   }, [])
 
-  return { run, status, error, version: PYODIDE_VERSION }
+  const runTests = useCallback(async (code: string, testCases: { name: string; code: string }[]): Promise<CodeTestRun> => {
+    setError('')
+    setStatus((current) => current === 'ready' ? 'running' : 'loading')
+    try {
+      const runtime = await loadRuntime()
+      setStatus('running')
+      await runtime.loadPackagesFromImports(code)
+      const source = JSON.stringify(code)
+      const testsSource = JSON.stringify(JSON.stringify(testCases))
+      const raw = await runtime.runPythonAsync(`
+import contextlib
+import io
+import json
+import traceback
+
+_source = ${source}
+_tests = json.loads(${testsSource})
+_scope = {}
+_buffer = io.StringIO()
+_results = []
+_load_error = None
+
+try:
+    with contextlib.redirect_stdout(_buffer), contextlib.redirect_stderr(_buffer):
+        exec(compile(_source, "<solution>", "exec"), _scope)
+except Exception:
+    _load_error = traceback.format_exc()
+
+for _test in _tests:
+    if _load_error:
+        _results.append({"name": _test["name"], "passed": False, "error": _load_error})
+        continue
+    try:
+        with contextlib.redirect_stdout(_buffer), contextlib.redirect_stderr(_buffer):
+            exec(compile(_test["code"], "<test>", "exec"), _scope)
+        _results.append({"name": _test["name"], "passed": True, "error": ""})
+    except Exception:
+        _results.append({"name": _test["name"], "passed": False, "error": traceback.format_exc()})
+
+json.dumps({
+    "passed": sum(1 for _item in _results if _item["passed"]),
+    "total": len(_results),
+    "output": _buffer.getvalue(),
+    "results": _results,
+}, ensure_ascii=False)
+`)
+      const result = JSON.parse(String(raw)) as CodeTestRun
+      setStatus('ready')
+      return result
+    } catch (reason) {
+      const message = reason instanceof Error ? reason.message : String(reason)
+      setError(message)
+      setStatus('error')
+      return { passed: 0, total: testCases.length, output: '', results: testCases.map((item) => ({ name: item.name, passed: false, error: message })) }
+    }
+  }, [])
+
+  return { run, runTests, status, error, version: PYODIDE_VERSION }
 }

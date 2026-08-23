@@ -6,6 +6,12 @@ import { PracticePage } from './pages/PracticePage'
 import { PlaygroundPage } from './pages/PlaygroundPage'
 import { MistakesPage } from './pages/MistakesPage'
 import { ProgressPage } from './pages/ProgressPage'
+import { ProjectDetailPage } from './pages/ProjectDetailPage'
+import { ProjectsPage } from './pages/ProjectsPage'
+import { SkillsPage } from './pages/SkillsPage'
+import { ExpertPage } from './pages/ExpertPage'
+import { LabDetailPage } from './pages/LabDetailPage'
+import { LabsPage } from './pages/LabsPage'
 
 export default function App() {
   return (
@@ -16,6 +22,12 @@ export default function App() {
       <Route path="/playground" element={<PlaygroundPage />} />
       <Route path="/mistakes" element={<MistakesPage />} />
       <Route path="/progress" element={<ProgressPage />} />
+      <Route path="/skills" element={<SkillsPage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+      <Route path="/labs" element={<LabsPage />} />
+      <Route path="/labs/:labId" element={<LabDetailPage />} />
+      <Route path="/expert" element={<ExpertPage />} />
       <Route path="/learn/:lessonId" element={<LessonPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

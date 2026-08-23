@@ -6,7 +6,7 @@ from app.core.error_codes import ErrorCode
 from app.core.exceptions import BusinessException
 from app.db.session import get_session
 from app.main import app
-from app.models import Course, Exercise, Lesson, Stage
+from app.models import Course, Exercise, Lab, LabStep, Lesson, Project, ProjectTask, Skill, Stage
 
 
 class FakeSession:
@@ -74,6 +74,69 @@ def test_catalog_matches_frontend_contract() -> None:
     course.stages = [stage]
     stage.lessons = [lesson]
     lesson.exercises = [lesson_exercise, challenge]
+    skill = Skill(
+        id="python-foundation",
+        course_id=course.id,
+        stage_id=stage.id,
+        order=1,
+        title="Python 语法基础",
+        description="掌握基础语法",
+        level="foundation",
+        mastery_threshold=80,
+    )
+    skill.lessons = [lesson]
+    skill.prerequisites = []
+    project = Project(
+        id="cli-project",
+        course_id=course.id,
+        order=1,
+        title="CLI 项目",
+        summary="完成一个 CLI",
+        description="项目说明",
+        difficulty=2,
+        estimated_hours=4,
+        status="available",
+    )
+    project.skills = [skill]
+    project.tasks = [
+        ProjectTask(
+            id="cli-task",
+            project_id=project.id,
+            order=1,
+            title="实现入口",
+            description="实现 main",
+            acceptance_criteria=["可以运行"],
+        )
+    ]
+    course.skills = [skill]
+    course.projects = [project]
+    lab = Lab(
+        id="testing-lab",
+        course_id=course.id,
+        order=1,
+        title="测试实验",
+        summary="练习测试",
+        description="实验说明",
+        level="advanced",
+        kind="engineering",
+        estimated_hours=2,
+        status="available",
+        objectives=["理解 fixture"],
+    )
+    lab.skills = [skill]
+    lab.steps = [
+        LabStep(
+            id="testing-step",
+            lab_id=lab.id,
+            order=1,
+            title="运行测试",
+            instructions="执行 pytest",
+            commands=["pytest -q"],
+            verification=["测试通过"],
+            hints=["先阅读失败信息"],
+        )
+    ]
+    course.labs = [lab]
 
     app.dependency_overrides[get_session] = lambda: FakeSession(course)
     try:
@@ -87,7 +150,11 @@ def test_catalog_matches_frontend_contract() -> None:
     assert payload["message"] == "success"
     assert payload["data"]["stages"][0]["lessonIds"] == ["what-is-python"]
     assert payload["data"]["lessons"][0]["oneLiner"] == "Python 强调可读性。"
+    assert len(payload["data"]["lessons"][0]["exercises"]) == 2
     assert payload["data"]["practiceChallenges"][0]["lessonId"] == "what-is-python"
+    assert payload["data"]["skills"][0]["lessonIds"] == ["what-is-python"]
+    assert payload["data"]["projects"][0]["tasks"][0]["acceptanceCriteria"] == ["可以运行"]
+    assert payload["data"]["labs"][0]["steps"][0]["commands"] == ["pytest -q"]
 
 
 def test_missing_course_uses_stable_business_code() -> None:

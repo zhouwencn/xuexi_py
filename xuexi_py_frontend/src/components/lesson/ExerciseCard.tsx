@@ -14,7 +14,7 @@ export function ExerciseCard({ exercise, lessonId, onCorrect }: { exercise: Exer
   function submit() {
     if (!selected) return
     setSubmitted(true)
-    if (lessonId) recordExercise(lessonId, selected === exercise.answer)
+    if (lessonId) recordExercise(lessonId, selected === exercise.answer, exercise.id)
     if (selected === exercise.answer) onCorrect?.()
   }
 

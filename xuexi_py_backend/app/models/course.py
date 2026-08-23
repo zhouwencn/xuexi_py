@@ -19,6 +19,9 @@ class Course(Base):
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     stages: Mapped[list["Stage"]] = relationship(back_populates="course", cascade="all, delete-orphan")
+    skills: Mapped[list["Skill"]] = relationship(back_populates="course", cascade="all, delete-orphan")
+    projects: Mapped[list["Project"]] = relationship(back_populates="course", cascade="all, delete-orphan")
+    labs: Mapped[list["Lab"]] = relationship(back_populates="course", cascade="all, delete-orphan")
 
 
 class Stage(Base):
@@ -38,6 +41,7 @@ class Stage(Base):
 
     course: Mapped[Course] = relationship(back_populates="stages")
     lessons: Mapped[list["Lesson"]] = relationship(back_populates="stage", cascade="all, delete-orphan")
+    skills: Mapped[list["Skill"]] = relationship(back_populates="stage", cascade="all, delete-orphan")
 
 
 class Lesson(Base):
@@ -67,13 +71,18 @@ class Lesson(Base):
 
     stage: Mapped[Stage] = relationship(back_populates="lessons")
     exercises: Mapped[list["Exercise"]] = relationship(back_populates="lesson", cascade="all, delete-orphan")
+    skills: Mapped[list["Skill"]] = relationship(secondary="lesson_skills", back_populates="lessons")
 
 
 class Exercise(Base):
     __tablename__ = "exercises"
     __table_args__ = (
         CheckConstraint("source IN ('lesson', 'challenge')", name="ck_exercises_source"),
-        CheckConstraint("type IN ('fill', 'choice', 'predict', 'debug')", name="ck_exercises_type"),
+        CheckConstraint(
+            "type IN ('fill', 'choice', 'predict', 'debug', 'code', 'review', 'incident', 'design')",
+            name="ck_exercises_type",
+        ),
+        CheckConstraint("difficulty BETWEEN 1 AND 5", name="ck_exercises_difficulty"),
     )
 
     id: Mapped[str] = mapped_column(String(128), primary_key=True)
@@ -87,5 +96,13 @@ class Exercise(Base):
     options: Mapped[list[str]] = mapped_column(JSONB)
     answer: Mapped[str] = mapped_column(Text)
     explanation: Mapped[str] = mapped_column(Text)
+    difficulty: Mapped[int] = mapped_column(SmallInteger, default=1, server_default="1")
+    starter_code: Mapped[str | None] = mapped_column(Text, nullable=True)
+    test_cases: Mapped[list[dict[str, Any]]] = mapped_column(JSONB, default=list, server_default="[]")
+    hints: Mapped[list[str]] = mapped_column(JSONB, default=list, server_default="[]")
 
     lesson: Mapped[Lesson] = relationship(back_populates="exercises")
+
+
+# 避免运行时循环导入，同时让 SQLAlchemy 能解析字符串关系。
+from app.models.learning import Lab, Project, Skill  # noqa: E402, F401

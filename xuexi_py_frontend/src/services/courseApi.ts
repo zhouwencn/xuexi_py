@@ -49,7 +49,7 @@ export async function fetchCourseCatalog(signal?: AbortSignal): Promise<CourseCa
     throw new ApiBusinessError('课程 API 成功响应缺少 data', -1, response.status)
   }
 
-  if (!Array.isArray(catalog.stages) || !Array.isArray(catalog.lessons) || !catalog.lessons.length || !Array.isArray(catalog.practiceChallenges)) {
+  if (!Array.isArray(catalog.stages) || !Array.isArray(catalog.lessons) || !catalog.lessons.length || !Array.isArray(catalog.practiceChallenges) || !Array.isArray(catalog.skills) || !Array.isArray(catalog.projects) || !Array.isArray(catalog.labs)) {
     throw new ApiBusinessError('课程 API 返回的数据结构不完整', -1, response.status)
   }
 

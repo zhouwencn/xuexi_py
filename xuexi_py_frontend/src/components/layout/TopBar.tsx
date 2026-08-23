@@ -7,9 +7,11 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/Tooltip'
 const navItems = [
   { to: '/', label: '学习首页', end: true },
   { to: '/roadmap', label: '完整路线' },
-  { to: '/practice', label: '练习场' },
-  { to: '/playground', label: 'Playground' },
-  { to: '/mistakes', label: '错题本' },
+  { to: '/skills', label: '能力地图' },
+  { to: '/practice', label: '练习题库' },
+  { to: '/projects', label: '项目实战' },
+  { to: '/labs', label: '工程实验' },
+  { to: '/expert', label: '专家进阶' },
   { to: '/progress', label: '学习进度' },
 ]
 
