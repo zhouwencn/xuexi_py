@@ -1,12 +1,13 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import type { LabStepSubmission, LearningState, ProjectTaskSubmission, ReviewItem, ReviewRating } from '../types/course'
 import { useCourseData } from './useCourseData'
 import { useAuth } from './useAuth'
 import { fetchCloudProgress, saveCloudProgress } from '../services/accountApi'
+import { ApiBusinessError } from '../services/courseApi'
 
-const LEGACY_STORAGE_KEY = 'pypath-learning-state-v1'
-const STORAGE_PREFIX = 'pypath-learning-state-v2'
+const AUTO_SYNC_DELAY_MS = 400
+const PROGRESS_VERSION_CONFLICT = 50001
 const initialState: LearningState = {
   schemaVersion: 2,
   completed: [],
@@ -94,37 +95,84 @@ function normalizeState(value: unknown): LearningState {
   }
 }
 
-function storageKey(userId?: string) {
-  return `${STORAGE_PREFIX}:${userId ?? 'anonymous'}`
-}
-
-function readState(key: string): LearningState {
-  try {
-    const saved = localStorage.getItem(key) ?? (key.endsWith(':anonymous') ? localStorage.getItem(LEGACY_STORAGE_KEY) : null)
-    return saved ? normalizeState(JSON.parse(saved)) : initialState
-  } catch {
-    return initialState
-  }
-}
-
 export function LearningProgressProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth()
-  const ownerKey = storageKey(user?.id)
-  return <LearningProgressStateProvider key={ownerKey} ownerKey={ownerKey} userId={user?.id}>{children}</LearningProgressStateProvider>
+  return <LearningProgressStateProvider key={user?.id ?? 'anonymous'}>{children}</LearningProgressStateProvider>
 }
 
-function LearningProgressStateProvider({ children, ownerKey, userId }: { children: ReactNode; ownerKey: string; userId?: string }) {
+function LearningProgressStateProvider({ children }: { children: ReactNode }) {
   const { labs, lessons, projects, skills } = useCourseData()
   const { token } = useAuth()
-  const [state, setState] = useState<LearningState>(() => {
-    const hasOwnerState = localStorage.getItem(ownerKey) !== null
-    return hasOwnerState || !userId ? readState(ownerKey) : readState(storageKey())
-  })
-  const [cloudSyncStatus, setCloudSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>('idle')
+  const [state, setState] = useState<LearningState>(initialState)
+  const [cloudSyncStatus, setCloudSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>(token ? 'syncing' : 'idle')
+  const [cloudSyncReady, setCloudSyncReady] = useState(!token)
+  const cloudVersionRef = useRef(0)
+  const lastSyncedStateRef = useRef('')
+  const saveQueueRef = useRef<Promise<void>>(Promise.resolve())
 
   useEffect(() => {
-    localStorage.setItem(ownerKey, JSON.stringify(state))
-  }, [ownerKey, state])
+    if (!token) return
+    let cancelled = false
+
+    fetchCloudProgress(token)
+      .then((remote) => {
+        if (cancelled) return
+        cloudVersionRef.current = remote.version
+        if (remote.version > 0) {
+          const remoteState = normalizeState(remote.state)
+          lastSyncedStateRef.current = JSON.stringify(remoteState)
+          setState(remoteState)
+          setCloudSyncStatus('synced')
+        } else {
+          // 新账号会在自动保存 effect 中创建云端进度记录。
+          lastSyncedStateRef.current = ''
+          setCloudSyncStatus('idle')
+        }
+        setCloudSyncReady(true)
+      })
+      .catch(() => {
+        if (cancelled) return
+        setCloudSyncStatus('error')
+      })
+
+    return () => { cancelled = true }
+  }, [token])
+
+  const persistCloudState = useCallback(async (snapshot: LearningState) => {
+    if (!token) return
+    setCloudSyncStatus('syncing')
+    try {
+      let saved
+      try {
+        saved = await saveCloudProgress(token, snapshot, cloudVersionRef.current)
+      } catch (reason) {
+        if (!(reason instanceof ApiBusinessError) || reason.code !== PROGRESS_VERSION_CONFLICT) throw reason
+        const latest = await fetchCloudProgress(token)
+        cloudVersionRef.current = latest.version
+        saved = await saveCloudProgress(token, snapshot, latest.version)
+      }
+      cloudVersionRef.current = saved.version
+      lastSyncedStateRef.current = JSON.stringify(snapshot)
+      setCloudSyncStatus('synced')
+    } catch (reason) {
+      setCloudSyncStatus('error')
+      throw reason
+    }
+  }, [token])
+
+  const enqueueCloudSave = useCallback((snapshot: LearningState) => {
+    saveQueueRef.current = saveQueueRef.current
+      .catch(() => undefined)
+      .then(() => persistCloudState(snapshot))
+      .catch(() => undefined)
+  }, [persistCloudState])
+
+  useEffect(() => {
+    if (!token || !cloudSyncReady) return
+    if (JSON.stringify(state) === lastSyncedStateRef.current) return
+    const timer = window.setTimeout(() => enqueueCloudSave(state), AUTO_SYNC_DELAY_MS)
+    return () => window.clearTimeout(timer)
+  }, [cloudSyncReady, enqueueCloudSave, state, token])
 
   const value = useMemo<LearningProgressContextValue>(() => {
     const availableLessons = lessons.filter((lesson) => lesson.status === 'available')
@@ -243,22 +291,19 @@ function LearningProgressStateProvider({ children, ownerKey, userId }: { childre
       cloudSyncStatus,
       uploadCloudProgress: async () => {
         if (!token) return
-        setCloudSyncStatus('syncing')
-        try {
-          const remote = await fetchCloudProgress(token)
-          await saveCloudProgress(token, state, remote.version)
-          setCloudSyncStatus('synced')
-        } catch {
-          setCloudSyncStatus('error')
-          throw new Error('云端上传失败')
-        }
+        await persistCloudState(state)
       },
       downloadCloudProgress: async () => {
         if (!token) return
         setCloudSyncStatus('syncing')
         try {
           const remote = await fetchCloudProgress(token)
-          if (remote.version > 0) setState(normalizeState(remote.state))
+          cloudVersionRef.current = remote.version
+          if (remote.version > 0) {
+            const remoteState = normalizeState(remote.state)
+            lastSyncedStateRef.current = JSON.stringify(remoteState)
+            setState(remoteState)
+          }
           setCloudSyncStatus('synced')
         } catch {
           setCloudSyncStatus('error')
@@ -266,7 +311,11 @@ function LearningProgressStateProvider({ children, ownerKey, userId }: { childre
         }
       },
     }
-  }, [cloudSyncStatus, labs, lessons, projects, skills, state, token])
+  }, [cloudSyncStatus, labs, lessons, persistCloudState, projects, skills, state, token])
+
+  if (token && !cloudSyncReady) {
+    return <div className="grid min-h-screen place-items-center bg-[#f5f8f7] px-6 text-center text-sm text-slate-500 dark:bg-[#07110f]">{cloudSyncStatus === 'error' ? '云端学习记录加载失败，请检查后端服务后刷新页面。' : '正在加载当前用户的云端学习记录…'}</div>
+  }
 
   return <LearningProgressContext.Provider value={value}>{children}</LearningProgressContext.Provider>
 }

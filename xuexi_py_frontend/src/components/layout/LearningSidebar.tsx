@@ -1,6 +1,6 @@
 import { Check, ChevronDown, Circle, LockKeyhole, X } from 'lucide-react'
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { NavLink, useParams } from 'react-router-dom'
 import { useCourseData } from '../../hooks/useCourseData'
 import { useLearningProgress } from '../../hooks/useLearningProgress'
 import { ProgressBar } from '../ui/ProgressBar'
@@ -8,15 +8,28 @@ import { ProgressBar } from '../ui/ProgressBar'
 export function LearningSidebar({ open, onClose }: { open: boolean; onClose: () => void }) {
   const { lessons, stages } = useCourseData()
   const { completed, progress } = useLearningProgress()
+  const { lessonId } = useParams<{ lessonId: string }>()
   const activeStages = stages.filter((stage) => stage.status === 'active')
-  const [expanded, setExpanded] = useState(() => new Set(['foundation']))
+  const currentStageId = lessons.find((lesson) => lesson.id === lessonId)?.stageId ?? activeStages[0]?.id ?? 'foundation'
+  const activeLessonRef = useRef<HTMLAnchorElement>(null)
+  const [expansion, setExpansion] = useState(() => ({
+    stageId: currentStageId,
+    expanded: new Set([currentStageId]),
+  }))
+  const expanded = expansion.stageId === currentStageId
+    ? expansion.expanded
+    : new Set([currentStageId])
+
+  useEffect(() => {
+    activeLessonRef.current?.scrollIntoView({ block: 'center', inline: 'nearest' })
+  }, [lessonId])
 
   function toggleStage(stageId: string) {
-    setExpanded((current) => {
-      const next = new Set(current)
+    setExpansion((current) => {
+      const next = new Set(current.stageId === currentStageId ? current.expanded : [currentStageId])
       if (next.has(stageId)) next.delete(stageId)
       else next.add(stageId)
-      return next
+      return { stageId: currentStageId, expanded: next }
     })
   }
 
@@ -40,7 +53,7 @@ export function LearningSidebar({ open, onClose }: { open: boolean; onClose: () 
               const isExpanded = expanded.has(stage.id)
               return (
                 <div key={stage.id} className="mb-4">
-                  <button onClick={() => toggleStage(stage.id)} className="flex w-full items-center justify-between rounded-xl px-2 py-2 text-left hover:bg-white/70 dark:hover:bg-white/[0.04]">
+                  <button onClick={() => toggleStage(stage.id)} aria-expanded={isExpanded} className="flex w-full items-center justify-between rounded-xl px-2 py-2 text-left hover:bg-white/70 dark:hover:bg-white/[0.04]">
                     <div className="flex items-center gap-3"><span className="grid h-7 w-7 place-items-center rounded-lg bg-emerald-500 text-xs font-bold text-emerald-950">{String(stage.order).padStart(2, '0')}</span><div><div className="text-sm font-semibold text-slate-900 dark:text-white">{stage.shortTitle}</div><div className="text-[10px] text-slate-400">{stageCompleted} / {stageLessons.length} 节已掌握</div></div></div>
                     <ChevronDown size={15} className={`text-slate-400 transition-transform ${isExpanded ? '' : '-rotate-90'}`} />
                   </button>
@@ -48,7 +61,7 @@ export function LearningSidebar({ open, onClose }: { open: boolean; onClose: () 
                     {stageLessons.map((item) => {
                       const done = completed.includes(item.id)
                       return (
-                        <NavLink key={item.id} to={`/learn/${item.id}`} onClick={onClose} className={({ isActive }) => `group mb-1 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${isActive ? 'bg-white text-emerald-700 shadow-sm ring-1 ring-slate-200 dark:bg-white/[0.07] dark:text-mint dark:ring-white/10' : 'text-slate-500 hover:bg-white/70 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/[0.04] dark:hover:text-slate-100'}`}>
+                        <NavLink ref={item.id === lessonId ? activeLessonRef : undefined} key={item.id} to={`/learn/${item.id}`} end onClick={onClose} className={({ isActive }) => `group mb-1 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition ${isActive ? 'bg-white text-emerald-700 shadow-sm ring-1 ring-slate-200 dark:bg-white/[0.07] dark:text-mint dark:ring-white/10' : 'text-slate-500 hover:bg-white/70 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/[0.04] dark:hover:text-slate-100'}`}>
                           <span className={`grid h-5 w-5 shrink-0 place-items-center rounded-full border ${done ? 'border-emerald-400 bg-emerald-400 text-emerald-950' : 'border-slate-300 text-slate-300 dark:border-white/20 dark:text-white/20'}`}>{done ? <Check size={12} strokeWidth={3} /> : <Circle size={6} fill="currentColor" />}</span>
                           <span className="min-w-0 flex-1 truncate">{String(item.order).padStart(2, '0')} · {item.title}</span>
                           <span className="text-[10px] text-slate-400">{item.duration}m</span>

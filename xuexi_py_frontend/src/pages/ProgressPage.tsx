@@ -10,7 +10,7 @@ export function ProgressPage() {
   const { completed, bookmarked, wrongExerciseIds, exerciseAttempts, exerciseCorrect, getLabProgress, getProjectProgress, progress, skillMastery } = useLearningProgress()
   const accuracy = exerciseAttempts ? Math.round(exerciseCorrect / exerciseAttempts * 100) : 0
   const weakSkills = skillMastery.filter((item) => item.status === 'weak').slice(0, 4)
-  return <AppShell><div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14"><div className="mb-9"><p className="eyebrow">Learning analytics</p><h1 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 sm:text-4xl dark:text-white">学习进度</h1><p className="mt-3 text-sm text-slate-500">数据只保存在当前浏览器中。</p></div>
+  return <AppShell><div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14"><div className="mb-9"><p className="eyebrow">Learning analytics</p><h1 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 sm:text-4xl dark:text-white">学习进度</h1><p className="mt-3 text-sm text-slate-500">登录用户的数据自动保存到数据库；未登录时刷新页面会清空当前进度。</p></div>
     <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{[
       { icon: Gauge, label: '课程总进度', value: `${progress}%`, color: 'text-emerald-500' },
       { icon: CheckCircle2, label: '已掌握课程', value: `${completed.length} / ${lessons.length}`, color: 'text-sky-500' },

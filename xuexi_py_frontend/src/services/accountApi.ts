@@ -10,7 +10,7 @@ export interface SubmissionResult { id: string; exerciseId: string; passed: numb
 export interface EnvironmentInfo { id: string; status: string; url?: string; expiresAt: string }
 
 async function apiRequest<T>(path: string, options: RequestInit = {}, token?: string, allowNull = false): Promise<T> {
-  if (!courseApiEnabled) throw new ApiBusinessError('当前静态站点未配置后端 API', -1, 0)
+  if (!courseApiEnabled) throw new ApiBusinessError('当前环境未配置后端 API', -1, 0)
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...options,
     headers: { Accept: 'application/json', 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...options.headers },

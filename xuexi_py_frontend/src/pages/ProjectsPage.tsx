@@ -9,7 +9,7 @@ export function ProjectsPage() {
   const { projects, skills } = useCourseData()
   const { getProjectProgress } = useLearningProgress()
   return <AppShell><div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    <div className="mb-10"><p className="eyebrow">Build to learn</p><h1 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 sm:text-4xl dark:text-white">项目实战</h1><p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">跨章节完成需求、设计、实现、测试和复盘。提交记录暂时只保存在当前浏览器。</p></div>
+    <div className="mb-10"><p className="eyebrow">Build to learn</p><h1 className="mt-2 text-3xl font-black tracking-[-0.035em] text-slate-950 sm:text-4xl dark:text-white">项目实战</h1><p className="mt-3 max-w-2xl text-sm leading-6 text-slate-500">跨章节完成需求、设计、实现、测试和复盘。登录用户的提交记录会自动保存到数据库。</p></div>
     <div className="space-y-5">{projects.map((project) => {
       const progress = getProjectProgress(project.id)
       return <section key={project.id} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-7 dark:border-white/10 dark:bg-white/[0.03]">

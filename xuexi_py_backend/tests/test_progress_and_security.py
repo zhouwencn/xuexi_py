@@ -3,12 +3,13 @@ from types import SimpleNamespace
 import pytest
 from pydantic import ValidationError
 
-from app.api.routes.progress import get_progress
+from app.api.routes.progress import get_progress, save_progress
 from app.api.routes.submissions import result_schemas
 from app.core.config import Settings
 from app.core.error_codes import ErrorCode
 from app.core.exceptions import BusinessException
-from app.schemas.account import LearningStateData
+from app.models import Course, UserProgress
+from app.schemas.account import LearningStateData, ProgressWrite
 from app.services.code_execution import ExecutionResult
 
 
@@ -49,6 +50,41 @@ def test_missing_course_progress_returns_course_not_found() -> None:
 
     assert captured.value.code == ErrorCode.COURSE_NOT_FOUND
     assert captured.value.status_code == 404
+
+
+def test_saving_progress_uses_authenticated_user_id() -> None:
+    class ProgressSession:
+        added: UserProgress | None = None
+
+        def get(self, model: object, _identity: object) -> object | None:
+            if model is Course:
+                return SimpleNamespace(id="python-from-js")
+            return None
+
+        def add(self, progress: UserProgress) -> None:
+            self.added = progress
+
+        def commit(self) -> None:
+            pass
+
+        def refresh(self, _progress: UserProgress) -> None:
+            pass
+
+    session = ProgressSession()
+    payload = ProgressWrite(state=LearningStateData(completed=["variables"]), version=0)
+
+    response = save_progress(
+        "python-from-js",
+        payload,
+        user=SimpleNamespace(id="user-42"),
+        session=session,
+    )
+
+    assert session.added is not None
+    assert session.added.user_id == "user-42"
+    assert session.added.course_id == "python-from-js"
+    assert response.data is not None
+    assert response.data.state.completed == ["variables"]
 
 
 def test_hidden_test_results_do_not_return_names_or_tracebacks() -> None:
