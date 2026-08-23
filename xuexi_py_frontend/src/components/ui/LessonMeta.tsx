@@ -1,7 +1,13 @@
 import { Clock3 } from 'lucide-react'
-import { importanceMap } from '../../data/course'
 import type { Difficulty, Importance } from '../../types/course'
 import { Badge } from './Badge'
+
+const importanceMap: Record<Importance, { label: string; icon: string }> = {
+  must: { label: '必须掌握', icon: '🔥' },
+  frequent: { label: '经常使用', icon: '✅' },
+  read: { label: '看懂即可', icon: '👀' },
+  skip: { label: '可以暂时跳过', icon: '⏭' },
+}
 
 export function LessonMeta({ difficulty, importance, duration }: { difficulty: Difficulty; importance: Importance; duration: number }) {
   return (

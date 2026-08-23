@@ -77,7 +77,7 @@ class Lesson(Base):
 class Exercise(Base):
     __tablename__ = "exercises"
     __table_args__ = (
-        CheckConstraint("source IN ('lesson', 'challenge')", name="ck_exercises_source"),
+        CheckConstraint("source IN ('lesson', 'challenge', 'diagnostic')", name="ck_exercises_source"),
         CheckConstraint(
             "type IN ('fill', 'choice', 'predict', 'debug', 'code', 'review', 'incident', 'design')",
             name="ck_exercises_type",

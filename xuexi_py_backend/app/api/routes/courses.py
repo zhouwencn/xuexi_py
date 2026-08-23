@@ -46,7 +46,10 @@ def exercise_to_schema(exercise: Exercise) -> ExerciseRead:
 
 
 def lesson_to_schema(lesson: Lesson) -> LessonRead:
-    ordered_exercises = sorted(lesson.exercises, key=lambda item: (item.source != "lesson", item.sort_order, item.id))
+    ordered_exercises = sorted(
+        (item for item in lesson.exercises if item.source != "diagnostic"),
+        key=lambda item: (item.source != "lesson", item.sort_order, item.id),
+    )
     lesson_exercise = next((item for item in ordered_exercises if item.source == "lesson"), None)
     if lesson_exercise is None:
         raise BusinessException(

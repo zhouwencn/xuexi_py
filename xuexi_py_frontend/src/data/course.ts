@@ -1,15 +1,8 @@
-import type { Importance, Lesson, Stage } from '../types/course'
+import type { Lesson, Stage } from '../types/course'
 import { functionLessons } from './functionLessons'
 import { moduleLessons } from './moduleLessons'
 import { remainingLessons } from './remainingLessons'
 import { structureLessons } from './structureLessons'
-
-export const importanceMap: Record<Importance, { label: string; icon: string }> = {
-  must: { label: '必须掌握', icon: '🔥' },
-  frequent: { label: '经常使用', icon: '✅' },
-  read: { label: '看懂即可', icon: '👀' },
-  skip: { label: '可以暂时跳过', icon: '⏭' },
-}
 
 const foundationLessons: Lesson[] = [
   {

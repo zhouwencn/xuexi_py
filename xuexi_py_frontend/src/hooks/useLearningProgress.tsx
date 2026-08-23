@@ -5,12 +5,14 @@ import { useCourseData } from './useCourseData'
 import { useAuth } from './useAuth'
 import { fetchCloudProgress, saveCloudProgress } from '../services/accountApi'
 
-const STORAGE_KEY = 'pypath-learning-state-v1'
+const LEGACY_STORAGE_KEY = 'pypath-learning-state-v1'
+const STORAGE_PREFIX = 'pypath-learning-state-v2'
 const initialState: LearningState = {
+  schemaVersion: 2,
   completed: [],
   bookmarked: [],
   history: [],
-  wrongLessonIds: [],
+  wrongExerciseIds: [],
   exerciseAttempts: 0,
   exerciseCorrect: 0,
   exerciseResults: {},
@@ -49,7 +51,7 @@ interface LearningProgressContextValue extends LearningState {
   isComplete: (lessonId: string) => boolean
   isBookmarked: (lessonId: string) => boolean
   recordExercise: (lessonId: string, correct: boolean, exerciseId?: string) => void
-  removeWrong: (lessonId: string) => void
+  removeWrong: (exerciseId: string) => void
   skillMastery: SkillMastery[]
   saveProjectTaskSubmission: (taskId: string, submission: Omit<ProjectTaskSubmission, 'submittedAt'>) => void
   getProjectProgress: (projectId: string) => number
@@ -63,33 +65,77 @@ interface LearningProgressContextValue extends LearningState {
 
 const LearningProgressContext = createContext<LearningProgressContextValue | null>(null)
 
-function readState(): LearningState {
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+function normalizeState(value: unknown): LearningState {
+  if (!isRecord(value)) return initialState
+  const legacyWrongLessonIds = Array.isArray(value.wrongLessonIds) ? value.wrongLessonIds.filter((id): id is string => typeof id === 'string') : []
+  const currentWrongExerciseIds = Array.isArray(value.wrongExerciseIds)
+    ? value.wrongExerciseIds.filter((id): id is string => typeof id === 'string')
+    : []
+  const wrongExerciseIds = currentWrongExerciseIds.length
+    ? currentWrongExerciseIds
+    : legacyWrongLessonIds.map((lessonId) => `lesson:${lessonId}`)
+  return {
+    ...initialState,
+    schemaVersion: 2,
+    completed: Array.isArray(value.completed) ? value.completed.filter((id): id is string => typeof id === 'string') : [],
+    bookmarked: Array.isArray(value.bookmarked) ? value.bookmarked.filter((id): id is string => typeof id === 'string') : [],
+    history: Array.isArray(value.history) ? value.history.filter(isRecord) as LearningState['history'] : [],
+    wrongExerciseIds,
+    exerciseAttempts: typeof value.exerciseAttempts === 'number' && value.exerciseAttempts >= 0 ? value.exerciseAttempts : 0,
+    exerciseCorrect: typeof value.exerciseCorrect === 'number' && value.exerciseCorrect >= 0 ? value.exerciseCorrect : 0,
+    exerciseResults: isRecord(value.exerciseResults) ? value.exerciseResults as LearningState['exerciseResults'] : {},
+    projectSubmissions: isRecord(value.projectSubmissions) ? value.projectSubmissions as LearningState['projectSubmissions'] : {},
+    labSubmissions: isRecord(value.labSubmissions) ? value.labSubmissions as LearningState['labSubmissions'] : {},
+    reviewItems: isRecord(value.reviewItems) ? value.reviewItems as LearningState['reviewItems'] : {},
+  }
+}
+
+function storageKey(userId?: string) {
+  return `${STORAGE_PREFIX}:${userId ?? 'anonymous'}`
+}
+
+function readState(key: string): LearningState {
   try {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    return saved ? { ...initialState, ...JSON.parse(saved) } : initialState
+    const saved = localStorage.getItem(key) ?? (key.endsWith(':anonymous') ? localStorage.getItem(LEGACY_STORAGE_KEY) : null)
+    return saved ? normalizeState(JSON.parse(saved)) : initialState
   } catch {
     return initialState
   }
 }
 
 export function LearningProgressProvider({ children }: { children: ReactNode }) {
+  const { user } = useAuth()
+  const ownerKey = storageKey(user?.id)
+  return <LearningProgressStateProvider key={ownerKey} ownerKey={ownerKey} userId={user?.id}>{children}</LearningProgressStateProvider>
+}
+
+function LearningProgressStateProvider({ children, ownerKey, userId }: { children: ReactNode; ownerKey: string; userId?: string }) {
   const { labs, lessons, projects, skills } = useCourseData()
   const { token } = useAuth()
-  const [state, setState] = useState<LearningState>(readState)
+  const [state, setState] = useState<LearningState>(() => {
+    const hasOwnerState = localStorage.getItem(ownerKey) !== null
+    return hasOwnerState || !userId ? readState(ownerKey) : readState(storageKey())
+  })
   const [cloudSyncStatus, setCloudSyncStatus] = useState<'idle' | 'syncing' | 'synced' | 'error'>('idle')
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state))
-  }, [state])
+    localStorage.setItem(ownerKey, JSON.stringify(state))
+  }, [ownerKey, state])
 
   const value = useMemo<LearningProgressContextValue>(() => {
     const availableLessons = lessons.filter((lesson) => lesson.status === 'available')
-    const currentLesson = availableLessons.find((lesson) => !state.completed.includes(lesson.id)) ?? availableLessons.at(-1)
+    const availableLessonIds = new Set(availableLessons.map((lesson) => lesson.id))
+    const completed = state.completed.filter((lessonId) => availableLessonIds.has(lessonId))
+    const currentLesson = availableLessons.find((lesson) => !completed.includes(lesson.id)) ?? availableLessons.at(-1)
     const exerciseResults = state.exerciseResults ?? {}
     const projectSubmissions = state.projectSubmissions ?? {}
     const labSubmissions = state.labSubmissions ?? {}
     const skillMastery: SkillMastery[] = skills.map((skill) => {
-      const completedLessons = skill.lessonIds.filter((id) => state.completed.includes(id)).length
+      const completedLessons = skill.lessonIds.filter((id) => completed.includes(id)).length
       const lessonScore = skill.lessonIds.length ? completedLessons / skill.lessonIds.length * 50 : 0
       const results = Object.values(exerciseResults).filter((result) => skill.lessonIds.includes(result.lessonId))
       const attempts = results.reduce((total, result) => total + result.attempts, 0)
@@ -109,7 +155,9 @@ export function LearningProgressProvider({ children }: { children: ReactNode }) 
 
     return {
       ...state,
-      progress: availableLessons.length ? Math.round((state.completed.length / availableLessons.length) * 100) : 0,
+      completed,
+      bookmarked: state.bookmarked.filter((lessonId) => lessons.some((lesson) => lesson.id === lessonId)),
+      progress: availableLessons.length ? Math.round((completed.length / availableLessons.length) * 100) : 0,
       currentLessonId: currentLesson?.id ?? lessons[0].id,
       toggleComplete: (lessonId) => setState((current) => {
         const completed = current.completed.includes(lessonId)
@@ -147,16 +195,16 @@ export function LearningProgressProvider({ children }: { children: ReactNode }) 
               lessonId,
             },
           },
-          wrongLessonIds: correct
-            ? current.wrongLessonIds.filter((id) => id !== lessonId)
-            : current.wrongLessonIds.includes(lessonId)
-              ? current.wrongLessonIds
-              : [...current.wrongLessonIds, lessonId],
+          wrongExerciseIds: correct
+            ? current.wrongExerciseIds.filter((id) => id !== exerciseId)
+            : current.wrongExerciseIds.includes(exerciseId)
+              ? current.wrongExerciseIds
+              : [...current.wrongExerciseIds, exerciseId],
         }
       }),
-      removeWrong: (lessonId) => setState((current) => ({
+      removeWrong: (exerciseId) => setState((current) => ({
         ...current,
-        wrongLessonIds: current.wrongLessonIds.filter((id) => id !== lessonId),
+        wrongExerciseIds: current.wrongExerciseIds.filter((id) => id !== exerciseId),
       })),
       skillMastery,
       saveProjectTaskSubmission: (taskId, submission) => setState((current) => ({
@@ -210,7 +258,7 @@ export function LearningProgressProvider({ children }: { children: ReactNode }) 
         setCloudSyncStatus('syncing')
         try {
           const remote = await fetchCloudProgress(token)
-          if (remote.version > 0) setState({ ...initialState, ...remote.state })
+          if (remote.version > 0) setState(normalizeState(remote.state))
           setCloudSyncStatus('synced')
         } catch {
           setCloudSyncStatus('error')

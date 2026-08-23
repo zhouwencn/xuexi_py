@@ -1,5 +1,5 @@
 import { API_BASE_URL, ApiBusinessError, courseApiEnabled } from './courseApi'
-import type { LearningState } from '../types/course'
+import type { ApiResponse, LearningState } from '../types/course'
 
 export interface UserAccount { id: string; email: string; displayName: string; createdAt: string }
 export interface AuthSession { accessToken: string; tokenType: 'bearer'; expiresAt: string; user: UserAccount }
@@ -15,7 +15,15 @@ async function apiRequest<T>(path: string, options: RequestInit = {}, token?: st
     ...options,
     headers: { Accept: 'application/json', 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...options.headers },
   })
-  const payload = await response.json() as { code: number; message: string; data: T | null }
+  let payload: ApiResponse<T>
+  try {
+    payload = await response.json() as ApiResponse<T>
+  } catch {
+    throw new ApiBusinessError('API 返回的数据不是有效 JSON', -1, response.status)
+  }
+  if (typeof payload.code !== 'number' || typeof payload.message !== 'string' || !('data' in payload)) {
+    throw new ApiBusinessError('API 返回格式不符合统一响应规范', -1, response.status)
+  }
   if (!response.ok || payload.code !== 0 || (payload.data === null && !allowNull)) throw new ApiBusinessError(payload.message || '请求失败', payload.code, response.status)
   return payload.data as T
 }

@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager, suppress
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.gzip import GZipMiddleware
 
 from app.api.router import api_router
 from app.core.config import get_settings
@@ -36,6 +37,7 @@ async def lifespan(_app: FastAPI):
 
 app = FastAPI(title=settings.app_name, lifespan=lifespan)
 register_exception_handlers(app)
+app.add_middleware(GZipMiddleware, minimum_size=1_000)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.frontend_origins,

@@ -9,10 +9,21 @@ from app.db.session import get_session
 from app.models import CodeSubmission, Exercise, User
 from app.schemas.account import CodeSubmissionCreate, CodeSubmissionRead, TestResultRead
 from app.schemas.response import ApiResponse, success_response
-from app.services.code_execution import ExecutionFailedError, ExecutionUnavailableError, run_python_tests
+from app.services.code_execution import ExecutionFailedError, ExecutionResult, ExecutionUnavailableError, run_python_tests
 from app.services.review import build_code_diff, review_python_code
 
 router = APIRouter(prefix="/exercises", tags=["submissions"])
+
+
+def result_schemas(result: ExecutionResult, *, hidden: bool) -> list[TestResultRead]:
+    return [
+        TestResultRead(
+            name=f"隐藏测试 {index}" if hidden else item["name"],
+            passed=item["passed"],
+            error="" if hidden else item.get("error", ""),
+        )
+        for index, item in enumerate(result.results, start=1)
+    ]
 
 
 @router.post("/{exercise_id}/submissions", response_model=ApiResponse[CodeSubmissionRead])
@@ -25,6 +36,7 @@ def submit_code(
     exercise = session.get(Exercise, exercise_id)
     if exercise is None or exercise.type != "code":
         raise BusinessException(ErrorCode.EXERCISE_NOT_FOUND, status_code=status.HTTP_404_NOT_FOUND)
+    uses_hidden_tests = bool(exercise.hidden_test_cases)
     tests = exercise.hidden_test_cases or exercise.test_cases
     try:
         result = run_python_tests(payload.code, tests)
@@ -52,7 +64,7 @@ def submit_code(
         passed=submission.passed,
         total=submission.total,
         score=submission.score,
-        results=[TestResultRead(**item) for item in result.results],
+        results=result_schemas(result, hidden=uses_hidden_tests),
         diff=submission.diff,
         review=submission.review,
         created_at=submission.created_at,

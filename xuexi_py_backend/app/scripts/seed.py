@@ -11,6 +11,7 @@ SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "seed_data.json"
 LEARNING_SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "learning_data.json"
 ADVANCED_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "advanced_catalog.json"
 HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "db" / "hidden_tests.json"
+DIAGNOSTIC_SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "diagnostic_questions.json"
 EXPERT_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "expert_lessons.json"
 
 
@@ -71,6 +72,7 @@ def seed() -> None:
     learning_data = json.loads(LEARNING_SEED_PATH.read_text(encoding="utf-8"))
     advanced_data = json.loads(ADVANCED_SEED_PATH.read_text(encoding="utf-8"))
     hidden_tests = json.loads(HIDDEN_TESTS_PATH.read_text(encoding="utf-8"))
+    diagnostic_questions = json.loads(DIAGNOSTIC_SEED_PATH.read_text(encoding="utf-8"))
     expert_data = json.loads(EXPERT_SEED_PATH.read_text(encoding="utf-8"))
     course_data = data["course"]
     expert_stage = {
@@ -182,6 +184,30 @@ def seed() -> None:
                     "test_cases": exercise.get("testCases", []),
                     "hints": exercise.get("hints", []),
                     "hidden_test_cases": hidden_tests.get(challenge["id"], []),
+                },
+            )
+
+        for index, question in enumerate(diagnostic_questions, start=1):
+            upsert(
+                session,
+                Exercise,
+                question["id"],
+                {
+                    "lesson_id": question["lessonId"],
+                    "source": "diagnostic",
+                    "title": question["title"],
+                    "sort_order": index,
+                    "type": "choice",
+                    "prompt": question["prompt"],
+                    "code": question.get("code"),
+                    "options": question["options"],
+                    "answer": question["answer"],
+                    "explanation": question["explanation"],
+                    "difficulty": question["difficulty"],
+                    "starter_code": None,
+                    "test_cases": [],
+                    "hints": [],
+                    "hidden_test_cases": [],
                 },
             )
 
@@ -298,6 +324,7 @@ def seed() -> None:
     print(
         f"Seed 完成：{len(stage_data_list)} 个阶段，"
         f"{len(lesson_data_list)} 节课，{len(challenges)} 道额外练习，"
+        f"{len(diagnostic_questions)} 道独立诊断题，"
         f"{len(skill_data_list)} 项技能，{len(learning_data['projects'])} 个项目，"
         f"{len(advanced_data['labs'])} 个工程实验。"
     )

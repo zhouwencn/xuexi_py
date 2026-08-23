@@ -13,7 +13,7 @@ export function RoadmapPage() {
   return (
     <AppShell>
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mb-12 text-center"><span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-emerald-100 text-emerald-600 dark:bg-emerald-400/10 dark:text-mint"><Route size={23} /></span><p className="eyebrow mt-5">13 stages · Project first</p><h1 className="mt-2 text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-5xl dark:text-white">Python 从入门到工程实战</h1><p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-500">路线的终点不是会背语法，而是能阅读、判断和修改 FastAPI、AI Agent、自动化与数据项目。</p></div>
+        <div className="mb-12 text-center"><span className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-emerald-100 text-emerald-600 dark:bg-emerald-400/10 dark:text-mint"><Route size={23} /></span><p className="eyebrow mt-5">{stages.length} stages · Project first</p><h1 className="mt-2 text-4xl font-black tracking-[-0.04em] text-slate-950 sm:text-5xl dark:text-white">Python 从入门到工程实战</h1><p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-500">路线的终点不是会背语法，而是能阅读、判断和修改 FastAPI、AI Agent、自动化与数据项目。</p></div>
         <div className="space-y-4">
           {stages.map((stage) => {
             const active = stage.status === 'active'

@@ -19,6 +19,8 @@ python -m app.scripts.seed
 uvicorn app.main:app --reload --port 8011
 ```
 
+开发环境没有配置 `AUTH_SECRET_KEY` 时会生成本次进程使用的随机密钥，服务重启后旧 token 会失效。生产环境必须设置 `APP_ENV=production`，并显式提供至少 32 字节的随机 `AUTH_SECRET_KEY`。
+
 课程目录接口：`GET /api/v1/courses/python-from-js/catalog`
 
 ## 用户与学习闭环
@@ -45,6 +47,8 @@ CODE_EXECUTION_ENABLED=false
 ```bash
 docker pull python:3.12-alpine
 ```
+
+隐藏测试的名称和异常信息不会返回客户端。当前 runner 定位仍是本地学习反馈，不应作为对抗性考试沙箱；如果需要防止主动探测测试内容，应把判题控制层与用户代码进程进一步隔离。
 
 ## FastAPI/PostgreSQL 临时实验环境
 

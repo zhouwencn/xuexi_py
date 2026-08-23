@@ -47,7 +47,7 @@ export function HomePage() {
 
         <div className="grid gap-8 lg:grid-cols-[1fr_360px]">
           <section>
-            <div className="mb-5 flex items-end justify-between"><div><p className="eyebrow">Your roadmap</p><h2 className="section-title">从语法到真实项目</h2></div><Link to="/roadmap" className="hidden items-center gap-1 text-sm font-semibold text-emerald-600 sm:flex dark:text-emerald-400">全部 13 阶段 <ArrowRight size={14} /></Link></div>
+            <div className="mb-5 flex items-end justify-between"><div><p className="eyebrow">Your roadmap</p><h2 className="section-title">从语法到真实项目</h2></div><Link to="/roadmap" className="hidden items-center gap-1 text-sm font-semibold text-emerald-600 sm:flex dark:text-emerald-400">全部 {stages.length} 阶段 <ArrowRight size={14} /></Link></div>
             <div className="space-y-3">
               {stages.slice(0, 4).map((stage) => {
                 const stageLessons = lessons.filter((item) => item.stageId === stage.id)

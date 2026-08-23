@@ -1,11 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { lessons as fallbackLessons, stages as fallbackStages } from '../data/course'
-import { practiceChallenges as fallbackPracticeChallenges } from '../data/practice'
-import { projects as fallbackProjects } from '../data/projects'
-import { skills as fallbackSkills } from '../data/skills'
-import { labs as fallbackLabs } from '../data/advancedCatalog'
-import { expertLessons, expertStage } from '../data/expertCatalog'
 import { courseApiEnabled, fetchCourseCatalog } from '../services/courseApi'
 import type { CourseCatalog, LearningLab, Lesson, PracticeItem, Project, Skill, Stage } from '../types/course'
 
@@ -44,46 +38,67 @@ function normalizeCatalog(catalog: CourseCatalog): CourseCatalog {
   return { ...catalog, lessons, practiceChallenges: normalizedChallenges }
 }
 
-const fallbackCatalog: CourseCatalog = normalizeCatalog({
-  course: {
-    id: 'python-from-js',
-    title: 'PyPath · Python 学习路径',
-    description: '面向有 JavaScript 基础的开发者，通过真实代码阅读和练习系统学习 Python。',
-  },
-  stages: [...fallbackStages, expertStage],
-  lessons: [...fallbackLessons, ...expertLessons],
-  practiceChallenges: fallbackPracticeChallenges,
-  skills: fallbackSkills,
-  projects: fallbackProjects,
-  labs: fallbackLabs,
-})
+let fallbackCatalogPromise: Promise<CourseCatalog> | null = null
+
+function loadFallbackCatalog(): Promise<CourseCatalog> {
+  fallbackCatalogPromise ??= Promise.all([
+    import('../data/course'),
+    import('../data/practice'),
+    import('../data/projects'),
+    import('../data/skills'),
+    import('../data/advancedCatalog'),
+    import('../data/expertCatalog'),
+  ]).then(([course, practice, projects, skills, advanced, expert]) => normalizeCatalog({
+    course: {
+      id: 'python-from-js',
+      title: 'PyPath · Python 学习路径',
+      description: '面向有 JavaScript 基础的开发者，通过真实代码阅读和练习系统学习 Python。',
+    },
+    stages: [...course.stages, expert.expertStage],
+    lessons: [...course.lessons, ...expert.expertLessons],
+    practiceChallenges: practice.practiceChallenges,
+    skills: skills.skills,
+    projects: projects.projects,
+    labs: advanced.labs,
+  }))
+  return fallbackCatalogPromise
+}
 
 const CourseDataContext = createContext<CourseDataContextValue | null>(null)
 
 export function CourseDataProvider({ children }: { children: ReactNode }) {
-  const [catalog, setCatalog] = useState<CourseCatalog>(fallbackCatalog)
-  const [status, setStatus] = useState<CourseDataStatus>(courseApiEnabled ? 'loading' : 'fallback')
+  const [catalog, setCatalog] = useState<CourseCatalog | null>(null)
+  const [status, setStatus] = useState<CourseDataStatus>('loading')
   const [error, setError] = useState<string | null>(null)
   const [requestVersion, setRequestVersion] = useState(0)
 
   useEffect(() => {
-    if (!courseApiEnabled) return
-
     const controller = new AbortController()
 
-    fetchCourseCatalog(controller.signal)
-      .then((result) => {
-        setCatalog(normalizeCatalog(result))
-        setStatus('ready')
-      })
-      .catch((reason: unknown) => {
+    async function loadCatalog() {
+      try {
+        if (courseApiEnabled) {
+          setCatalog(normalizeCatalog(await fetchCourseCatalog(controller.signal)))
+          setStatus('ready')
+          return
+        }
+        setCatalog(await loadFallbackCatalog())
+        setStatus('fallback')
+      } catch (reason: unknown) {
         if (controller.signal.aborted) return
         const message = reason instanceof Error ? reason.message : String(reason)
+        if (!courseApiEnabled) {
+          setError(message)
+          return
+        }
         console.warn(`课程 API 暂不可用，继续使用内置数据：${message}`)
-        setCatalog(fallbackCatalog)
         setError(message)
+        setCatalog(await loadFallbackCatalog())
         setStatus('fallback')
-      })
+      }
+    }
+
+    void loadCatalog()
 
     return () => controller.abort()
   }, [requestVersion])
@@ -97,7 +112,7 @@ export function CourseDataProvider({ children }: { children: ReactNode }) {
     setError(null)
     setRequestVersion((current) => current + 1)
   }, [])
-  const value = useMemo<CourseDataContextValue>(() => ({
+  const value = useMemo<CourseDataContextValue | null>(() => catalog ? ({
     lessons: catalog.lessons,
     stages: catalog.stages,
     practiceChallenges: catalog.practiceChallenges,
@@ -108,8 +123,9 @@ export function CourseDataProvider({ children }: { children: ReactNode }) {
     error,
     getLessonById: (id) => catalog.lessons.find((lesson) => lesson.id === id),
     reload,
-  }), [catalog, error, reload, status])
+  }) : null, [catalog, error, reload, status])
 
+  if (!value) return <div className="grid min-h-screen place-items-center bg-[#f5f8f7] px-6 text-center text-sm text-slate-500 dark:bg-[#07110f]">{error ? `课程数据加载失败：${error}` : '正在加载课程数据…'}</div>
   return <CourseDataContext.Provider value={value}>{children}</CourseDataContext.Provider>
 }
 

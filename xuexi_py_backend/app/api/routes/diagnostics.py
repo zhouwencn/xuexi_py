@@ -20,7 +20,7 @@ def diagnostic_exercises(session: Session, course_id: str) -> list[Exercise]:
         select(Exercise)
         .join(Exercise.lesson)
         .join(Lesson.stage)
-        .where(Exercise.source == "challenge", Exercise.type != "code", Lesson.stage.has(course_id=course_id))
+        .where(Exercise.source == "diagnostic", Lesson.stage.has(course_id=course_id))
         .options(selectinload(Exercise.lesson).selectinload(Lesson.skills))
         .order_by(Exercise.difficulty.desc(), Exercise.id)
     ).all()

@@ -184,10 +184,11 @@ export interface ReviewItem {
 }
 
 export interface LearningState {
+  schemaVersion: 2
   completed: string[]
   bookmarked: string[]
   history: { lessonId: string; completedAt: string }[]
-  wrongLessonIds: string[]
+  wrongExerciseIds: string[]
   exerciseAttempts: number
   exerciseCorrect: number
   exerciseResults: Record<string, ExerciseResult>

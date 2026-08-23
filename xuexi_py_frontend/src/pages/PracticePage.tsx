@@ -57,7 +57,7 @@ function PracticeSession({ pool }: { pool: PracticeItem[] }) {
   function submit() {
     if (!selected || !current) return
     const correct = selected === current.exercise.answer
-    recordExercise(current.lessonId, correct)
+    recordExercise(current.lessonId, correct, current.exercise.id ?? current.id)
     if (correct) setScore((value) => value + 1)
     setSubmitted(true)
   }

@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends, status
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.core.error_codes import ErrorCode
@@ -23,7 +24,11 @@ def register(payload: RegisterRequest, session: Session = Depends(get_session)) 
         raise BusinessException(ErrorCode.USER_EMAIL_EXISTS, status_code=status.HTTP_409_CONFLICT)
     user = User(email=payload.email, display_name=payload.display_name.strip(), password_hash=hash_password(payload.password))
     session.add(user)
-    session.commit()
+    try:
+        session.commit()
+    except IntegrityError as exc:
+        session.rollback()
+        raise BusinessException(ErrorCode.USER_EMAIL_EXISTS, status_code=status.HTTP_409_CONFLICT) from exc
     session.refresh(user)
     token, expires_at = create_access_token(user.id)
     return success_response(TokenRead(access_token=token, expires_at=expires_at, user=user_schema(user)))

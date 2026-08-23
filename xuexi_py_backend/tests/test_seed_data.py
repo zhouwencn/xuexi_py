@@ -6,6 +6,7 @@ LEARNING_SEED_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "learn
 ADVANCED_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "advanced_catalog.json"
 EXPERT_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "expert_lessons.json"
 HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "hidden_tests.json"
+DIAGNOSTIC_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "diagnostic_questions.json"
 
 
 def test_seed_data_relationships_are_complete() -> None:
@@ -86,3 +87,16 @@ def test_expert_lessons_and_hidden_tests_are_complete() -> None:
     assert all(lesson["skillIds"] for lesson in expert["lessons"])
     assert len(hidden_tests) == 10
     assert all(tests and all(item["code"] for item in tests) for tests in hidden_tests.values())
+
+
+def test_diagnostic_bank_is_independent_and_complete() -> None:
+    catalog = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+    questions = json.loads(DIAGNOSTIC_PATH.read_text(encoding="utf-8"))
+    lesson_ids = {lesson["id"] for lesson in catalog["lessons"]}
+    public_ids = {item["id"] for item in catalog["practiceChallenges"]}
+
+    assert len(questions) == 20
+    assert len({item["id"] for item in questions}) == 20
+    assert not ({item["id"] for item in questions} & public_ids)
+    assert all(item["lessonId"] in lesson_ids for item in questions)
+    assert all(item["answer"] in item["options"] for item in questions)
