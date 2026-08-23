@@ -151,6 +151,8 @@ def test_catalog_matches_frontend_contract() -> None:
     assert payload["data"]["stages"][0]["lessonIds"] == ["what-is-python"]
     assert payload["data"]["lessons"][0]["oneLiner"] == "Python 强调可读性。"
     assert len(payload["data"]["lessons"][0]["exercises"]) == 2
+    assert "answer" not in payload["data"]["lessons"][0]["exercise"]
+    assert "explanation" not in payload["data"]["lessons"][0]["exercise"]
     assert payload["data"]["practiceChallenges"][0]["lessonId"] == "what-is-python"
     assert payload["data"]["skills"][0]["lessonIds"] == ["what-is-python"]
     assert payload["data"]["projects"][0]["tasks"][0]["acceptanceCriteria"] == ["可以运行"]

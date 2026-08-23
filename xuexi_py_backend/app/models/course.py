@@ -79,7 +79,7 @@ class Exercise(Base):
     __table_args__ = (
         CheckConstraint("source IN ('lesson', 'challenge', 'diagnostic')", name="ck_exercises_source"),
         CheckConstraint(
-            "type IN ('fill', 'choice', 'predict', 'debug', 'code', 'review', 'incident', 'design')",
+            "type IN ('fill', 'choice', 'predict', 'debug', 'code', 'review', 'rewrite', 'incident', 'design')",
             name="ck_exercises_type",
         ),
         CheckConstraint("difficulty BETWEEN 1 AND 5", name="ck_exercises_difficulty"),

@@ -21,12 +21,10 @@ export interface ExplanationLine {
 
 export interface Exercise {
   id?: string
-  type: 'fill' | 'choice' | 'predict' | 'debug' | 'code' | 'review' | 'incident' | 'design'
+  type: 'fill' | 'choice' | 'predict' | 'debug' | 'code' | 'review' | 'rewrite' | 'incident' | 'design'
   prompt: string
   code?: string
   options: string[]
-  answer: string
-  explanation: string
   difficulty?: Difficulty
   starterCode?: string
   testCases?: { name: string; code: string }[]

@@ -8,6 +8,7 @@ export interface DiagnosticQuestion { id: string; title: string; prompt: string;
 export interface DiagnosticResult { attemptId: string; score: number; correct: number; total: number; skillScores: Record<string, number>; recommendedSkillIds: string[] }
 export interface SubmissionResult { id: string; exerciseId: string; passed: number; total: number; score: number; results: { name: string; passed: boolean; error: string }[]; diff: string; review: string[]; createdAt: string }
 export interface EnvironmentInfo { id: string; status: string; url?: string; expiresAt: string }
+export interface ExerciseAttemptResult { attemptId?: string; exerciseId: string; correct: boolean; answer: string; explanation: string; createdAt?: string }
 
 async function apiRequest<T>(path: string, options: RequestInit = {}, token?: string, allowNull = false): Promise<T> {
   if (!courseApiEnabled) throw new ApiBusinessError('当前环境未配置后端 API', -1, 0)
@@ -36,6 +37,7 @@ export const saveCloudProgress = (token: string, state: LearningState, version: 
 export const fetchDiagnostic = (token: string) => apiRequest<{ courseId: string; questions: DiagnosticQuestion[] }>('/diagnostics/python-from-js', {}, token)
 export const submitDiagnostic = (token: string, answers: Record<string, string>) => apiRequest<DiagnosticResult>('/diagnostics/python-from-js/submit', { method: 'POST', body: JSON.stringify({ answers }) }, token)
 export const submitHiddenTests = (token: string, exerciseId: string, code: string) => apiRequest<SubmissionResult>(`/exercises/${exerciseId}/submissions`, { method: 'POST', body: JSON.stringify({ code }) }, token)
+export const submitExerciseAttempt = (exerciseId: string, response: string, token?: string) => apiRequest<ExerciseAttemptResult>(`/exercises/${exerciseId}/attempts`, { method: 'POST', body: JSON.stringify({ response }) }, token)
 export const fetchEnvironment = (token: string) => apiRequest<EnvironmentInfo | null>('/environments/current', {}, token, true)
 export const startEnvironment = (token: string) => apiRequest<EnvironmentInfo>('/environments', { method: 'POST' }, token)
 export const stopEnvironment = (token: string) => apiRequest<EnvironmentInfo>('/environments/current', { method: 'DELETE' }, token)

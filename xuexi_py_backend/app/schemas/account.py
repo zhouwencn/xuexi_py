@@ -132,6 +132,19 @@ class CodeSubmissionCreate(BaseModel):
     code: str = Field(min_length=1, max_length=20_000)
 
 
+class ExerciseAttemptCreate(BaseModel):
+    response: str = Field(min_length=1, max_length=20_000)
+
+
+class ExerciseAttemptRead(ApiModel):
+    attempt_id: str | None = None
+    exercise_id: str
+    correct: bool
+    answer: str
+    explanation: str
+    created_at: datetime | None = None
+
+
 class TestResultRead(ApiModel):
     name: str
     passed: bool

@@ -36,8 +36,6 @@ def exercise_to_schema(exercise: Exercise) -> ExerciseRead:
         prompt=exercise.prompt,
         code=exercise.code,
         options=exercise.options,
-        answer=exercise.answer,
-        explanation=exercise.explanation,
         difficulty=exercise.difficulty or 1,
         starter_code=exercise.starter_code,
         test_cases=exercise.test_cases or [],

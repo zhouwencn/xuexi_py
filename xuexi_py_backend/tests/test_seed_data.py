@@ -7,6 +7,7 @@ ADVANCED_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "advanced
 EXPERT_SEED_PATH = Path(__file__).resolve().parents[2] / "content" / "expert_lessons.json"
 HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "hidden_tests.json"
 DIAGNOSTIC_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "diagnostic_questions.json"
+MASTERY_QUESTIONS_PATH = Path(__file__).resolve().parents[1] / "app" / "db" / "python_mastery_questions.json"
 
 
 def test_seed_data_relationships_are_complete() -> None:
@@ -85,8 +86,29 @@ def test_expert_lessons_and_hidden_tests_are_complete() -> None:
     assert len({lesson["id"] for lesson in expert["lessons"]}) == 12
     assert all(lesson["difficulty"] if "difficulty" in lesson else 5 for lesson in expert["lessons"])
     assert all(lesson["skillIds"] for lesson in expert["lessons"])
-    assert len(hidden_tests) == 10
+    assert len(hidden_tests) >= 16
     assert all(tests and all(item["code"] for item in tests) for tests in hidden_tests.values())
+
+
+def test_python_mastery_bank_is_deep_varied_and_linked() -> None:
+    base = json.loads(SEED_PATH.read_text(encoding="utf-8"))
+    expert = json.loads(EXPERT_SEED_PATH.read_text(encoding="utf-8"))
+    questions = json.loads(MASTERY_QUESTIONS_PATH.read_text(encoding="utf-8"))
+    hidden_tests = json.loads(HIDDEN_TESTS_PATH.read_text(encoding="utf-8"))
+    lesson_ids = {lesson["id"] for lesson in base["lessons"]} | {lesson["id"] for lesson in expert["lessons"]}
+    code_questions = [item for item in questions if item["exercise"]["type"] == "code"]
+    objective_questions = [item for item in questions if item["exercise"]["type"] != "code"]
+
+    assert len(questions) >= 45
+    assert len({item["id"] for item in questions}) == len(questions)
+    assert all(item["lessonId"] in lesson_ids for item in questions)
+    assert all(item["exercise"]["difficulty"] >= 2 for item in questions)
+    assert sum(item["exercise"]["difficulty"] >= 4 for item in questions) >= len(questions) * 0.7
+    assert {item["exercise"]["type"] for item in questions} >= {"predict", "debug", "review", "design", "incident", "code"}
+    assert all(item["exercise"]["answer"] in item["exercise"]["options"] for item in objective_questions)
+    assert sum(item["exercise"]["answer"] == item["exercise"]["options"][0] for item in objective_questions) < len(objective_questions) / 2
+    assert all(item["exercise"]["testCases"] for item in code_questions)
+    assert all(item["id"] in hidden_tests for item in code_questions)
 
 
 def test_diagnostic_bank_is_independent_and_complete() -> None:

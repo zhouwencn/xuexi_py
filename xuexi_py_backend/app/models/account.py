@@ -63,6 +63,17 @@ class CodeSubmission(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
 
+class ExerciseAttempt(Base):
+    __tablename__ = "exercise_attempts"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
+    user_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    exercise_id: Mapped[str] = mapped_column(ForeignKey("exercises.id", ondelete="CASCADE"), index=True)
+    response: Mapped[str] = mapped_column(Text)
+    correct: Mapped[bool] = mapped_column(Boolean)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+
 class LabEnvironment(Base):
     __tablename__ = "lab_environments"
     __table_args__ = (UniqueConstraint("user_id", name="uq_lab_environments_user_id"),)

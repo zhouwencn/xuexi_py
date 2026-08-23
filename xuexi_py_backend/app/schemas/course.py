@@ -43,12 +43,10 @@ class RealWorldExample(ApiModel):
 
 class ExerciseRead(ApiModel):
     id: str
-    type: Literal["fill", "choice", "predict", "debug", "code", "review", "incident", "design"]
+    type: Literal["fill", "choice", "predict", "debug", "code", "review", "rewrite", "incident", "design"]
     prompt: str
     code: str | None = None
     options: list[str]
-    answer: str
-    explanation: str
     difficulty: Literal[1, 2, 3, 4, 5] = 1
     starter_code: str | None = None
     test_cases: list["ExerciseTestCase"] = Field(default_factory=list)

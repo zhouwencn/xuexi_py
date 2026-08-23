@@ -1,4 +1,5 @@
 import json
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
@@ -13,6 +14,7 @@ ADVANCED_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "advanced
 HIDDEN_TESTS_PATH = Path(__file__).resolve().parents[1] / "db" / "hidden_tests.json"
 DIAGNOSTIC_SEED_PATH = Path(__file__).resolve().parents[1] / "db" / "diagnostic_questions.json"
 EXPERT_SEED_PATH = Path(__file__).resolve().parents[3] / "content" / "expert_lessons.json"
+MASTERY_QUESTIONS_PATH = Path(__file__).resolve().parents[1] / "db" / "python_mastery_questions.json"
 
 
 def upsert(session: Session, model: type[Any], identity: str, values: dict[str, Any]) -> Any:
@@ -25,6 +27,43 @@ def upsert(session: Session, model: type[Any], identity: str, values: dict[str, 
     for field, value in values.items():
         setattr(instance, field, value)
     return instance
+
+
+def spread_answer_position(exercise: dict[str, Any], identity: str) -> dict[str, Any]:
+    """稳定打散客观题选项，避免正确答案长期固定在第一个位置。"""
+    result = {**exercise}
+    options = list(result.get("options", []))
+    answer = result.get("answer")
+    if len(options) < 2 or answer not in options:
+        return result
+    options.remove(answer)
+    target = int.from_bytes(sha256(identity.encode()).digest()[:2], "big") % (len(options) + 1)
+    options.insert(target, answer)
+    result["options"] = options
+    return result
+
+
+def deepen_lesson_exercise(lesson: dict[str, Any]) -> dict[str, Any]:
+    exercise = {**lesson["exercise"]}
+    if not exercise["prompt"].startswith("哪项最准确地描述"):
+        return exercise
+
+    misconception = lesson["commonErrors"][0]["description"] if lesson.get("commonErrors") else "代码会自动处理所有异常和边界条件。"
+    exercise.update(
+        {
+            "type": "review",
+            "prompt": f"阅读代码并追踪输入、状态变化和返回值。哪项最准确地解释“{lesson['title']}”在这里的主要行为？",
+            "code": exercise.get("code") or lesson["comparison"]["python"],
+            "options": [
+                exercise["answer"],
+                misconception,
+                "这段写法只改变代码格式，不会影响运行时行为。",
+                "解释器会自动修复无效输入，因此调用方不需要处理失败路径。",
+            ],
+            "explanation": f"{exercise['explanation']} 阅读时还要逐步确认对象引用、控制流、返回值和可能抛出的异常。",
+        }
+    )
+    return exercise
 
 
 def expand_expert_lesson(source: dict[str, Any], stage_id: str) -> dict[str, Any]:
@@ -74,6 +113,7 @@ def seed() -> None:
     hidden_tests = json.loads(HIDDEN_TESTS_PATH.read_text(encoding="utf-8"))
     diagnostic_questions = json.loads(DIAGNOSTIC_SEED_PATH.read_text(encoding="utf-8"))
     expert_data = json.loads(EXPERT_SEED_PATH.read_text(encoding="utf-8"))
+    mastery_questions = json.loads(MASTERY_QUESTIONS_PATH.read_text(encoding="utf-8"))
     course_data = data["course"]
     expert_stage = {
         **expert_data["stage"],
@@ -133,11 +173,12 @@ def seed() -> None:
                     "simulated_output": lesson.get("simulatedOutput"),
                 },
             )
-            exercise = lesson["exercise"]
+            exercise_id = f"lesson:{lesson['id']}"
+            exercise = spread_answer_position(deepen_lesson_exercise(lesson), exercise_id)
             upsert(
                 session,
                 Exercise,
-                f"lesson:{lesson['id']}",
+                exercise_id,
                 {
                     "lesson_id": lesson["id"],
                     "source": "lesson",
@@ -161,9 +202,10 @@ def seed() -> None:
             *data["practiceChallenges"],
             *learning_data["practiceChallenges"],
             *advanced_data["practiceChallenges"],
+            *mastery_questions,
         ]
         for index, challenge in enumerate(challenges, start=1):
-            exercise = challenge["exercise"]
+            exercise = spread_answer_position(challenge["exercise"], challenge["id"])
             upsert(
                 session,
                 Exercise,
@@ -188,6 +230,7 @@ def seed() -> None:
             )
 
         for index, question in enumerate(diagnostic_questions, start=1):
+            question = {**question, **spread_answer_position(question, question["id"])}
             upsert(
                 session,
                 Exercise,

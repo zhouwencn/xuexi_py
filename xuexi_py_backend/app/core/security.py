@@ -36,12 +36,12 @@ def create_access_token(user_id: str) -> tuple[str, datetime]:
     return token, expires_at
 
 
-def get_current_user(
+def get_optional_current_user(
     credentials: HTTPAuthorizationCredentials | None = Depends(bearer),
     session: Session = Depends(get_session),
-) -> User:
+) -> User | None:
     if credentials is None:
-        raise BusinessException(ErrorCode.USER_TOKEN_INVALID, status_code=status.HTTP_401_UNAUTHORIZED)
+        return None
     try:
         payload = jwt.decode(credentials.credentials, get_settings().auth_secret_key, algorithms=["HS256"])
         user_id = payload.get("sub")
@@ -54,4 +54,10 @@ def get_current_user(
         raise BusinessException(ErrorCode.USER_TOKEN_INVALID, status_code=status.HTTP_401_UNAUTHORIZED)
     if not user.is_active:
         raise BusinessException(ErrorCode.USER_INACTIVE, status_code=status.HTTP_403_FORBIDDEN)
+    return user
+
+
+def get_current_user(user: User | None = Depends(get_optional_current_user)) -> User:
+    if user is None:
+        raise BusinessException(ErrorCode.USER_TOKEN_INVALID, status_code=status.HTTP_401_UNAUTHORIZED)
     return user

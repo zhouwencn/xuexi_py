@@ -2,20 +2,33 @@ import { CheckCircle2, Lightbulb, RotateCcw, XCircle } from 'lucide-react'
 import { useState } from 'react'
 import type { Exercise } from '../../types/course'
 import { useLearningProgress } from '../../hooks/useLearningProgress'
+import { useAuth } from '../../hooks/useAuth'
+import { submitExerciseAttempt, type ExerciseAttemptResult } from '../../services/accountApi'
 import { CodeBlock } from '../ui/CodeBlock'
 import { Button } from '../ui/Button'
 
-export function ExerciseCard({ exercise, lessonId, onCorrect }: { exercise: Exercise; lessonId?: string; onCorrect?: () => void }) {
+export function ExerciseCard({ exercise, lessonId, onResult, allowRetry = true }: { exercise: Exercise; lessonId?: string; onResult?: (correct: boolean) => void; allowRetry?: boolean }) {
   const { recordExercise } = useLearningProgress()
+  const { token } = useAuth()
   const [selected, setSelected] = useState<string>()
-  const [submitted, setSubmitted] = useState(false)
-  const isCorrect = selected === exercise.answer
+  const [feedback, setFeedback] = useState<ExerciseAttemptResult>()
+  const [error, setError] = useState('')
+  const [busy, setBusy] = useState(false)
 
-  function submit() {
-    if (!selected) return
-    setSubmitted(true)
-    if (lessonId) recordExercise(lessonId, selected === exercise.answer, exercise.id)
-    if (selected === exercise.answer) onCorrect?.()
+  async function submit() {
+    if (!selected || !exercise.id) return
+    setBusy(true)
+    setError('')
+    try {
+      const result = await submitExerciseAttempt(exercise.id, selected, token ?? undefined)
+      setFeedback(result)
+      if (lessonId) recordExercise(lessonId, result.correct, exercise.id)
+      onResult?.(result.correct)
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : String(reason))
+    } finally {
+      setBusy(false)
+    }
   }
 
   return (
@@ -24,13 +37,14 @@ export function ExerciseCard({ exercise, lessonId, onCorrect }: { exercise: Exer
       {exercise.code && <div className="mb-5"><CodeBlock code={exercise.code} /></div>}
       <div className="grid gap-2">
         {exercise.options.map((option, index) => {
-          const answerStyle = submitted && option === exercise.answer ? 'border-emerald-400 bg-emerald-50 dark:bg-emerald-400/10' : submitted && option === selected ? 'border-rose-400 bg-rose-50 dark:bg-rose-400/10' : selected === option ? 'border-emerald-400 bg-white dark:bg-white/[0.08]' : 'border-slate-200 bg-white/70 hover:border-slate-300 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20'
-          return <button key={option} disabled={submitted} onClick={() => setSelected(option)} className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition ${answerStyle}`}><span className="grid h-6 w-6 place-items-center rounded-md bg-slate-100 font-mono text-xs text-slate-500 dark:bg-white/10">{String.fromCharCode(65 + index)}</span><code className="font-mono text-xs sm:text-sm">{option}</code></button>
+          const answerStyle = feedback && option === feedback.answer ? 'border-emerald-400 bg-emerald-50 dark:bg-emerald-400/10' : feedback && option === selected ? 'border-rose-400 bg-rose-50 dark:bg-rose-400/10' : selected === option ? 'border-emerald-400 bg-white dark:bg-white/[0.08]' : 'border-slate-200 bg-white/70 hover:border-slate-300 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-white/20'
+          return <button key={option} disabled={Boolean(feedback) || busy} onClick={() => setSelected(option)} className={`flex items-center gap-3 rounded-xl border px-4 py-3 text-left text-sm transition ${answerStyle}`}><span className="grid h-6 w-6 place-items-center rounded-md bg-slate-100 font-mono text-xs text-slate-500 dark:bg-white/10">{String.fromCharCode(65 + index)}</span><code className="font-mono text-xs sm:text-sm">{option}</code></button>
         })}
       </div>
-      {submitted && <div className={`mt-4 flex gap-3 rounded-xl p-4 text-sm ${isCorrect ? 'bg-emerald-100/70 text-emerald-900 dark:bg-emerald-400/10 dark:text-emerald-200' : 'bg-rose-100/70 text-rose-900 dark:bg-rose-400/10 dark:text-rose-200'}`}>{isCorrect ? <CheckCircle2 className="mt-0.5 shrink-0" size={18} /> : <XCircle className="mt-0.5 shrink-0" size={18} />}<div><strong>{isCorrect ? '判断正确' : '再看一眼'}</strong><p className="mt-1 leading-6 opacity-80">{exercise.explanation}</p></div></div>}
+      {feedback && <div className={`mt-4 flex gap-3 rounded-xl p-4 text-sm ${feedback.correct ? 'bg-emerald-100/70 text-emerald-900 dark:bg-emerald-400/10 dark:text-emerald-200' : 'bg-rose-100/70 text-rose-900 dark:bg-rose-400/10 dark:text-rose-200'}`}>{feedback.correct ? <CheckCircle2 className="mt-0.5 shrink-0" size={18} /> : <XCircle className="mt-0.5 shrink-0" size={18} />}<div><strong>{feedback.correct ? '判断正确' : `正确答案：${feedback.answer}`}</strong><p className="mt-1 leading-6 opacity-80">{feedback.explanation}</p></div></div>}
+      {error && <p className="mt-4 text-sm text-rose-500">{error}</p>}
       <div className="mt-5 flex justify-end">
-        {submitted ? <Button variant="secondary" onClick={() => { setSelected(undefined); setSubmitted(false) }}><RotateCcw size={15} /> 再做一次</Button> : <Button onClick={submit} disabled={!selected}>检查答案</Button>}
+        {feedback ? allowRetry && <Button variant="secondary" onClick={() => { setSelected(undefined); setFeedback(undefined); setError('') }}><RotateCcw size={15} /> 再做一次</Button> : <Button onClick={submit} disabled={!selected || busy}>{busy ? '判题中…' : '提交答案'}</Button>}
       </div>
     </div>
   )

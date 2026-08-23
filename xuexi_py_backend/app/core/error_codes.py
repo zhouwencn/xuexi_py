@@ -23,6 +23,7 @@ class ErrorCode(IntEnum):
     COURSE_NOT_FOUND = 20001
 
     LESSON_EXERCISE_MISSING = 30001
+    EXERCISE_REQUIRES_CODE_SUBMISSION = 30002
 
     USER_EMAIL_EXISTS = 40001
     USER_CREDENTIALS_INVALID = 40002
@@ -49,6 +50,7 @@ ERROR_MESSAGES: dict[ErrorCode, str] = {
     ErrorCode.REQUEST_ERROR: "请求处理失败",
     ErrorCode.COURSE_NOT_FOUND: "课程不存在",
     ErrorCode.LESSON_EXERCISE_MISSING: "课时练习配置不完整",
+    ErrorCode.EXERCISE_REQUIRES_CODE_SUBMISSION: "代码题必须使用代码提交接口",
     ErrorCode.USER_EMAIL_EXISTS: "该邮箱已注册",
     ErrorCode.USER_CREDENTIALS_INVALID: "邮箱或密码错误",
     ErrorCode.USER_TOKEN_INVALID: "登录状态无效或已过期",
