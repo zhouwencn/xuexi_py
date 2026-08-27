@@ -1,0 +1,156 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.5 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.5">
+  <diagram name="第 1 页" id="TUHKUrO7r4OSMzSciFMk">
+    <mxGraphModel dx="595" dy="358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="583" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NwsKhMgms4IxlkG6YguC-2" value="云GPU服务器&lt;div&gt;4090/24G显卡&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="80" y="90" width="380" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-3" target="NwsKhMgms4IxlkG6YguC-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-15" value="用本地" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="NwsKhMgms4IxlkG6YguC-14">
+          <mxGeometry x="0.2544" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-3" value="Dify平台&lt;div&gt;AI 智能体工作流平台&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-4" value="Xinference" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="360" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-5" value="docker（类似手机应用商店）&lt;div&gt;最终docker要能调动显卡能力&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-7" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="269.58" y="270" as="sourcePoint" />
+            <mxPoint x="269.58" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-8" value="一句话安装 任何软件" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="NwsKhMgms4IxlkG6YguC-7">
+          <mxGeometry x="-0.4056" relative="1" as="geometry">
+            <mxPoint y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-9" target="NwsKhMgms4IxlkG6YguC-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-9" value="nvidia驱动" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="320" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-11" value="私有部署大模型&lt;div&gt;DeepSeek/Qwen&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-12" value="Ollama（容器）&lt;div&gt;下载qwen/Ds&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-13" value="ip:11434" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-16" value="Ollama&lt;div&gt;公司内部产品使用&lt;/div&gt;&lt;div&gt;快速，简单&lt;/div&gt;&lt;div&gt;模型不多&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="110" y="414" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-17" value="Xinference&lt;div&gt;对外提供模型服务&lt;/div&gt;&lt;div&gt;高并发&lt;/div&gt;&lt;div&gt;所有模型&lt;/div&gt;&lt;div&gt;直接去模型网站&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="270" y="414" width="130" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-18" value="vLLM&lt;div&gt;自行使用底层框架&lt;/div&gt;&lt;div&gt;编排大模型推理流程&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="400" y="520" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-19" value="LocalAI&lt;div&gt;为了OpenAI 代码兼容&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="70" y="510" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-20" target="NwsKhMgms4IxlkG6YguC-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-20" value="huggingface" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435" y="414" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-21" target="NwsKhMgms4IxlkG6YguC-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-21" value="modelscope" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="435" y="460" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-24" value="下载" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="430" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-25" value="Xinference&lt;div&gt;服务器&lt;/div&gt;&lt;div&gt;运行超多大模型&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="142" y="580" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-26" value="9997" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="590" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-27" target="NwsKhMgms4IxlkG6YguC-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-27" value="Python代码" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;" vertex="1" parent="1">
+          <mxGeometry x="350" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-29" value="指定模型地址是&lt;div&gt;xinference服务器地址&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="600" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-30" target="NwsKhMgms4IxlkG6YguC-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-30" value="下载模型权重文件&lt;div&gt;启动界面&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="680" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-31" target="NwsKhMgms4IxlkG6YguC-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-31" value="上传模型权重文件&lt;div&gt;注册界面&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-32" value="模型" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="217" y="690" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-35" target="NwsKhMgms4IxlkG6YguC-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-37" value="运行/vLLM" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="NwsKhMgms4IxlkG6YguC-36">
+          <mxGeometry x="0.1406" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-35" value="Xinference" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="217" y="760" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-38" target="NwsKhMgms4IxlkG6YguC-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-38" value="Java/Go/xx业务" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="122" y="910" width="98" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-39" value="Dify平台&lt;div&gt;自定义工作流&lt;/div&gt;&lt;div&gt;暴露了REST接口&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="910" width="98" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-41" value="dify平台地址&lt;div&gt;按照dify文档说明&lt;/div&gt;&lt;div&gt;调用指定工作流&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="232" y="900" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="NwsKhMgms4IxlkG6YguC-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="478" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-43" value="spring ai&lt;div&gt;openai sdk&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="800" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-46" value="LocalAI&lt;div&gt;为了OpenAI 代码兼容&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="490" y="800" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-47" value="Ollama&lt;div&gt;公司内部产品使用&lt;/div&gt;&lt;div&gt;快速，简单&lt;/div&gt;&lt;div&gt;模型不多&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="490" y="730" width="120" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-48" value="发请求即可" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="958" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NwsKhMgms4IxlkG6YguC-49" value="AI的逻辑，就是工作流的逻辑" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="880" width="180" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -11,3 +11,13 @@ __pycache__/
 htmlcov/
 .ruff_cache/
 .mypy_cache/
+
+# Large machine-learning model weights
+*.safetensors
+
+# Large archives in learning materials (kept locally)
+/资料/1.快速上手Python与AI生态/课件.zip
+/资料/3.智能体开发全套/5.Agent周/day04 - LangChain 高级用法/langchain-demo.zip
+/资料/3.智能体开发全套/6.天宫医疗/day01 - 基础环境&Neo4j/tiangong-agent.zip
+/资料/4.大模型原理（IT周瑜直播讲）/1.机器学习与深度学习基础（IT周瑜的直播课）/1.机器学习入门课/课件&软件/MindManager2020破解版.zip
+/资料/AI数字人技术方案.zip
