@@ -9,6 +9,7 @@ const navItems = [
   { to: '/', label: '学习首页', end: true },
   { to: '/roadmap', label: '完整路线' },
   { to: '/skills', label: '能力地图' },
+  { to: '/numpy-lab', label: 'NumPy 动画' },
   { to: '/practice', label: '练习题库' },
   { to: '/projects', label: '项目实战' },
   { to: '/labs', label: '工程实验' },

@@ -16,6 +16,7 @@ import { AccountPage } from './pages/AccountPage'
 import { DiagnosticPage } from './pages/DiagnosticPage'
 import { EnvironmentPage } from './pages/EnvironmentPage'
 import { ReviewPage } from './pages/ReviewPage'
+import { NumpyVisualLabPage } from './pages/NumpyVisualLabPage'
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
       <Route path="/review" element={<ReviewPage />} />
       <Route path="/diagnostic" element={<DiagnosticPage />} />
       <Route path="/environment" element={<EnvironmentPage />} />
+      <Route path="/numpy-lab" element={<NumpyVisualLabPage />} />
       <Route path="/learn/:lessonId" element={<LessonPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
