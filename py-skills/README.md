@@ -1,104 +1,87 @@
-# NumPy + Pandas 系统学习体系
+# Python 常用模块与依赖学习体系
 
-这是一套独立于项目前后端代码的学习资料，目标不是背 API，而是形成下面这条完整能力链：
+这套资料以 Python 语言和常用开发能力为核心。每个模块独立成目录，学习入口负责建立概念和工作流，API 参考负责防止遗漏。
 
-```text
-理解原理
-  ↓
-阅读代码并预测结果
-  ↓
-模仿示例手写
-  ↓
-脱离示例独立实现
-  ↓
-定位并修复错误
-  ↓
-重构低质量代码
-  ↓
-完成真实数据项目
-```
+版本基线日期：**2026-08-30**。标准库使用 Python 3.12；第三方库版本写在各自入口。
 
-最终标准：遇到常见数值计算或表格数据处理需求时，可以独立分析数据结构、选择方案、手写代码、验证结果和定位问题。
+## 使用方法
 
-## 目录
+详细训练方法见：[Python 模块与依赖学习方法](./LEARNING-METHOD.md)。
 
-### NumPy
+1. 先读模块 README，理解它解决的问题。
+2. 运行最小示例并主动修改输入。
+3. 使用 API 参考查缺补漏，不按字母顺序死背。
+4. 完成边界、报错和综合任务后再进入下一个模块。
+
+## Python 3.12 标准库
+
+- [asyncio：异步 I/O](./StandardLibrary/asyncio/README.md)
+- [collections：专用容器](./StandardLibrary/collections/README.md)
+- [csv：CSV 表格文本](./StandardLibrary/csv/README.md)
+- [dataclasses：数据类](./StandardLibrary/dataclasses/README.md)
+- [datetime：日期与时间](./StandardLibrary/datetime/README.md)
+- [functools：高阶函数工具](./StandardLibrary/functools/README.md)
+- [itertools：惰性迭代工具](./StandardLibrary/itertools/README.md)
+- [json：JSON 编解码](./StandardLibrary/json/README.md)
+- [logging：日志系统](./StandardLibrary/logging/README.md)
+- [math：实数数学函数](./StandardLibrary/math/README.md)
+- [multiprocessing：多进程](./StandardLibrary/multiprocessing/README.md)
+- [os：操作系统接口](./StandardLibrary/os/README.md)
+- [pathlib：对象化路径](./StandardLibrary/pathlib/README.md)
+- [random：伪随机数](./StandardLibrary/random/README.md)
+- [re：正则表达式](./StandardLibrary/re/README.md)
+- [sqlite3：SQLite DB-API](./StandardLibrary/sqlite3/README.md)
+- [statistics：基础统计](./StandardLibrary/statistics/README.md)
+- [subprocess：子进程管理](./StandardLibrary/subprocess/README.md)
+- [sys：解释器与运行时](./StandardLibrary/sys/README.md)
+- [threading：线程并发](./StandardLibrary/threading/README.md)
+- [time：系统时间与计时](./StandardLibrary/time/README.md)
+- [typing：类型系统](./StandardLibrary/typing/README.md)
+- [unittest：标准测试框架](./StandardLibrary/unittest/README.md)
+
+## 打包与依赖工具
+
+- [pip：包安装器](./Packaging/pip/README.md)
+- [setuptools：构建后端](./Packaging/setuptools/README.md)
+- [wheel：Wheel 文件工具](./Packaging/wheel/README.md)
+
+## 常用第三方库与工具
+
+- [HTTPX：同步与异步 HTTP 客户端](./ThirdParty/HTTPX/README.md)
+- [IPython：增强交互式 Python](./ThirdParty/IPython/README.md)
+- [JupyterLab：交互式开发环境](./ThirdParty/JupyterLab/README.md)
+- [Matplotlib：Python 绘图](./ThirdParty/Matplotlib/README.md)
+- [Pydantic：数据验证与序列化](./ThirdParty/Pydantic/README.md)
+- [pytest：测试框架](./ThirdParty/pytest/README.md)
+- [python-dotenv：.env 加载](./ThirdParty/python-dotenv/README.md)
+- [Requests：同步 HTTP 客户端](./ThirdParty/Requests/README.md)
+- [Ruff：Lint 与格式化](./ThirdParty/Ruff/README.md)
+
+## 数值与表格数据
 
 - [NumPy 学习入口](./Numpy/README.md)
-- [NumPy 完整学习路径](./Numpy/01-learning-path.md)
-- [NumPy 知识图谱](./Numpy/02-knowledge-graph.md)
-- [NumPy 训练与考核体系](./Numpy/03-training-system.md)
-- [NumPy API 掌握分级](./Numpy/04-api-mastery.md)
-
-### Pandas
-
 - [Pandas 学习入口](./Pandas/README.md)
-- [Pandas 完整学习路径](./Pandas/01-learning-path.md)
-- [Pandas 知识图谱](./Pandas/02-knowledge-graph.md)
-- [Pandas 训练与考核体系](./Pandas/03-training-system.md)
-- [Pandas API 掌握分级](./Pandas/04-api-mastery.md)
-- [股票数据综合实战](./Pandas/05-stock-data-projects.md)
 
-## 总体学习顺序
+## 推荐学习顺序
 
 ```text
-Python list / 基础数据结构
+pathlib / json / csv / datetime
   ↓
-NumPy ndarray 与 dtype
+collections / itertools / functools / typing / dataclasses
   ↓
-索引、切片、向量化与广播
+logging / subprocess / sqlite3 / unittest / pytest
   ↓
-shape、axis、view/copy 与内存
+threading / multiprocessing / asyncio / HTTPX
   ↓
-Pandas Series / DataFrame / Index
+NumPy / Pandas / Matplotlib
   ↓
-读取、检查、选择、清洗与类型转换
-  ↓
-GroupBy、Merge、透视与时间序列
-  ↓
-性能、调试和数据质量
-  ↓
-股票数据完整项目
+Pydantic / packaging / 工程工具
 ```
 
-## 四阶段考核
+## API 完整性规则
 
-| 阶段 | 核心目标 | 通过标准 |
-|---|---|---|
-| Stage 1：NumPy 基础 | 独立完成常见数组操作 | 不查资料完成创建、索引、广播、reshape、条件和聚合 |
-| Stage 2：Pandas 基础 | 独立读取并清洗 CSV | 能检查结构、修正类型、处理缺失与重复、完成筛选和导出 |
-| Stage 3：Pandas 中高级 | 独立完成分析任务 | 掌握 GroupBy、Merge、rolling、时间序列和性能基本原则 |
-| Stage 4：真实项目 | 独立交付股票分析程序 | 从原始数据到清洗、指标、统计、合并、测试和导出形成闭环 |
-
-建议每个阶段达到至少 85% 的独立正确率后再进入下一阶段。
-
-## AI 辅助学习规则
-
-练习期间使用三级提示：
-
-1. 第一次只提示方向，不给代码。
-2. 第二次指出关键知识点或 API。
-3. 第三次只给关键一两行，不提供完整实现。
-4. 只有学习者明确说“查看答案”后，才查看完整参考答案。
-
-代码出错时，先回答以下问题：
-
-- 哪一行最可能有问题？
-- 当前数据的 `shape`、`dtype`、`columns`、`index` 是什么？
-- 实际结果和预期结果从哪一步开始不同？
-- 问题属于索引、类型、缺失、对齐、分组、排序、窗口还是引用关系？
-
-## JavaScript 经验迁移原则
-
-可以用 JavaScript 建立第一层直觉，但不能简单画等号：
-
-| JavaScript | Python / 数据工具 | 主要区别 |
-|---|---|---|
-| `Array` | Python `list` | 二者都是通用容器，可放不同类型 |
-| `Array` | NumPy `ndarray` | ndarray 通常同质，支持广播和底层批量运算 |
-| `Object` / `Map` | Python `dict` | 都表达键值关系，但语义和 API 不完全相同 |
-| 对象数组 | Pandas `DataFrame` | DataFrame 按列组织类型，并按标签对齐 |
-| `array.filter(...)` | `df.loc[mask]` | Pandas 的 mask 是带 Index 的布尔 Series |
-| `array.map(...)` | `Series.map(...)` | Pandas 会保留 Index；数值任务优先考虑向量化列运算 |
-
-> 股票数据只作为编程与数据分析练习，不构成投资建议。
+- [API 覆盖矩阵](./API-COVERAGE.md)
+- 收录官方文档中的稳定公开 Python 对象或用户命令。
+- 下划线开头的私有接口不作为稳定 API。
+- 废弃接口保留在对应版本的官方索引中，学习时以替代方案为主。
+- NumPy、Pandas、Matplotlib 等大型库通过完整索引保证覆盖，通过学习路径区分掌握优先级。

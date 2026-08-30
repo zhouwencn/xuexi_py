@@ -45,3 +45,6 @@ Pandas 的核心不是“会调用 `read_csv` 和 `groupby`”，而是建立五
 4. 当前操作会改变粒度或行数吗？
 5. 如何验证结果没有静默出错？
 ```
+## 完整 API 索引
+
+- [Pandas 完整公开 API 参考](./06-complete-api-reference.md)

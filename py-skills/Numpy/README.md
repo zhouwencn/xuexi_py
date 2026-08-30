@@ -39,3 +39,6 @@ NumPy 的核心不在于记住几十个函数，而在于建立四个稳定模�
   ↓
 完成改错和综合练习
 ```
+## 完整 API 索引
+
+- [NumPy 完整公开 API 参考](./05-complete-api-reference.md)
