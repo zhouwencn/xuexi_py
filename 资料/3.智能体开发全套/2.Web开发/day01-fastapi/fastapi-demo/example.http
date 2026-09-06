@@ -1,0 +1,19 @@
+### 1. 复杂数据校验
+GET http://localhost:8000/users/10001
+
+
+### 2. 商品查询
+GET http://localhost:8000/goods/123456
+
+### 3. 图书查询
+GET http://localhost:8000/books/123456
+
+### 4. 图书查询2
+GET http://localhost:8000/books2/123456?pageSize=50&page=1200
+
+
+### 5. 获取 user-agent 请求头数据
+GET http://localhost:8000/items/123?q=aaa&k=kkk&v=ccc
+
+### 6. 获取 accept-language 请求头数据
+GET http://localhost:8000/items2/123?q=aaa&k=kkk&v=ccc
