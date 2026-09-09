@@ -1,0 +1,5193 @@
+[
+  {
+    "response": {
+      "id": "resp_9df2c958-22e6-4336-8f7c-5704a1b97734",
+      "created_at": 1774274666.0,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": null,
+      "model": "",
+      "object": "response",
+      "output": [],
+      "parallel_tool_calls": false,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [],
+      "top_p": null,
+      "background": null,
+      "completed_at": null,
+      "conversation": null,
+      "max_output_tokens": null,
+      "max_tool_calls": null,
+      "previous_response_id": null,
+      "prompt": null,
+      "prompt_cache_key": null,
+      "prompt_cache_retention": null,
+      "reasoning": null,
+      "safety_identifier": null,
+      "service_tier": null,
+      "status": "queued",
+      "text": null,
+      "top_logprobs": null,
+      "truncation": null,
+      "usage": null,
+      "user": null
+    },
+    "sequence_number": 0,
+    "type": "response.created"
+  },
+  {
+    "response": {
+      "id": "resp_9df2c958-22e6-4336-8f7c-5704a1b97734",
+      "created_at": 1774274666.0,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": null,
+      "model": "",
+      "object": "response",
+      "output": [],
+      "parallel_tool_calls": false,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [],
+      "top_p": null,
+      "background": null,
+      "completed_at": null,
+      "conversation": null,
+      "max_output_tokens": null,
+      "max_tool_calls": null,
+      "previous_response_id": null,
+      "prompt": null,
+      "prompt_cache_key": null,
+      "prompt_cache_retention": null,
+      "reasoning": null,
+      "safety_identifier": null,
+      "service_tier": null,
+      "status": "in_progress",
+      "text": null,
+      "top_logprobs": null,
+      "truncation": null,
+      "usage": null,
+      "user": null
+    },
+    "sequence_number": 1,
+    "type": "response.in_progress"
+  },
+  {
+    "item": {
+      "id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+      "summary": [],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    "output_index": 0,
+    "sequence_number": 2,
+    "type": "response.output_item.added"
+  },
+  {
+    "delta": "Thinking",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 3,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Process:\n\n1",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 4,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".  **An",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 5,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "alyze the Request:**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 6,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 7,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " User: \"介绍一下",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 8,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "你自己\" (Int",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 9,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "roduce yourself).\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 10,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   Context",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 11,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ": Current actual",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 12,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " time is Monday,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 13,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " March 23",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 14,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", 20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 15,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "26. Knowledge",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 16,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " cutoff date is ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 17,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 18,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 19,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   Task",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 20,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ": Provide a self",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 21,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "-introduction",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 22,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " in Chinese.\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 23,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2.  **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 24,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Identify My Identity",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 25,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":**\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 26,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   I am",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 27,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Qwen3.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 28,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5 (Qwen",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 29,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 30,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "), a large language",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 31,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " model",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 32,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " developed by Alibaba Cloud",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 33,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'s Tongyi Lab",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 34,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 35,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   I need to",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 36,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " reflect the current date",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 37,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 38,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 39,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ")",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 40,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " and my knowledge cutoff",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 41,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 42,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 43,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ") as",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 44,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " per the system instructions",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 45,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 46,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "3.  **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 47,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Draft",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 48,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "ing the Content:**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 49,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 50,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **Greeting:**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 51,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Friendly",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 52,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " and professional.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 53,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 54,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   **Name",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 55,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " & Version",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 56,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":** Qwen3",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 57,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".5.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 58,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 59,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Developer:** Alibaba",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 60,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Cloud Tongyi Lab",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 61,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 62,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 63,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Capabilities:** Highlight",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 64,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " key strengths (reason",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 65,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "ing, coding,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 66,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " multilingual, long",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 67,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " context, etc",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 68,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".) based on the",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 69,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Qwen3.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 70,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5 profile.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 71,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 72,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **Knowledge Cutoff",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 73,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":** Mention ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 74,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 75,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 76,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   **Current Date",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 77,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Awareness",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 78,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":** Acknowledge the",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 79,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " current date (March",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 80,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 202",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 81,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "6) if",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 82,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " relevant, but primarily",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 83,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " focus on",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 84,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " who I am.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 85,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 86,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **Purpose:** How",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 87,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " I can",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 88,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " help the user.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 89,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 90,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **Tone:**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 91,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Helpful, accurate",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 92,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", concise.\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 93,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "4.  **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 94,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Refining based on",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 95,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Constraints",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 96,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":**\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 97,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   The",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 98,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " system prompt explicitly states",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 99,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ": \"Please",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 100,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " remember the current actual",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 101,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " time: Monday,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 102,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " March 23",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 103,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", 20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 104,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "26. Your",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 105,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " knowledge cutoff date is",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 106,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 202",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 107,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "6.\"\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 108,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   I should",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 109,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " not",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 110,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " claim to be Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 111,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3 or",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 112,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Qwen2.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 113,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5. I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 114,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " am Qwen3",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 115,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".5.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 116,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 117,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " need to ensure",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 118,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the information aligns",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 119,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " with the ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 120,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 121,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " timeframe.\n\n5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 122,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".  **Draft",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 123,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "ing the Response (",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 124,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Internal Monologue/T",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 125,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "rial):**\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 126,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   *Hello",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 127,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", I am Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 128,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 129,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".*\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 130,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 131,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Created",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 132,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " by Alibaba Cloud.*",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 133,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 134,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   *My",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 135,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " knowledge goes",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 136,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " up to 2",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 137,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "026.*",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 138,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 139,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *I can help",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 140,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " with writing, coding",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 141,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", analysis",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 142,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", etc.*\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 143,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 144,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   *Nice",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 145,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " to meet",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 146,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " you.*\n\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 147,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *Let",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 148,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'s make it more",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 149,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " natural and comprehensive",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 150,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " in Chinese.*\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 151,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 152,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "你好！我是 Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 153,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 154,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，是阿里巴巴云",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 155,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "通义实验室研发的",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 156,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "超大规模语言模型",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 157,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 158,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   我的知识",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 159,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "截止时间是 2",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 160,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "026 ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 161,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "年。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 162,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *   我",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 163,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "擅长什么",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 164,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "？逻辑推理、",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 165,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "代码生成",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 166,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、多语言支持",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 167,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、长文本处理",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 168,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "等。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 169,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 170,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   有什么我可以",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 171,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "帮你的吗？",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 172,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n\n6. ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 173,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **Final",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 174,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Polish (incorpor",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 175,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "ating Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 176,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 177,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " specific strengths",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 178,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "):**\n    *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 179,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   Mention enhanced",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 180,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " reasoning, visual analysis",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 181,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", autonomous",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 182,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " planning, etc.,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 183,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " as",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 184,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " per the typical Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 185,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 186,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " upgrade profile.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 187,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 188,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Keep it concise but",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 189,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " informative",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 190,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".\n\n7.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 191,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "  **Final Output",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 192,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Generation (in Chinese",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 193,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "):**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 194,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    你好",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 195,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "！我是 Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 196,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 197,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，是",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 198,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "阿里巴巴云通义",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 199,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "实验室自主研发",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 200,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "的超大规模语言",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 201,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "模型",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 202,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n\n    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 203,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "我的知识",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 204,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "截止时间是 2",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 205,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "026 ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 206,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "年。作为最新",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 207,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "一代的",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 208,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "模型，我在以下几个方面",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 209,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "进行了显著",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 210,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "升级：\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 211,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 1. ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 212,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **语言基座",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 213,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "增强**：基于",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 214,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "更全面、高质量的知识",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 215,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "语料训练，",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 216,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "具备更精准的语言",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 217,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "理解与",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 218,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "表达能力。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 219,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 2. ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 220,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **架构效率升级",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 221,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 222,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "采用混合注意力机制",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 223,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、高稀疏度",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 224,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " MoE 结构",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 225,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "及多 token",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 226,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 预测技术，",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 227,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "大幅提升了训练效率",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 228,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "与推理速度。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 229,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 230,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "3.  **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 231,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "逻辑推理进阶",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 232,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：在数学",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 233,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "计算",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 234,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、自然科学及复杂",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 235,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "逻辑推理领域",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 236,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "进行全面强化，能够",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 237,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "更",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 238,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "准确地拆解并完成高",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 239,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "难度任务。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 240,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    4",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 241,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ". ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 242,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **视觉深度解析",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 243,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：不仅能",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 244,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "识别内容，还能",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 245,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "梳理",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 246,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "因果关系，提供条理",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 247,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "清晰的专业解读。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 248,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 249,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ". ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 250,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **智能体自主",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 251,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "规划**：",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 252,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "支持自主进行多",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 253,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "轮搜索与",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 254,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "代码执行，具备",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 255,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "理解图形",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 256,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "界面及跨设备",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 257,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "操作的能力",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 258,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，可独立规划",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 259,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "并完成复杂任务。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 260,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    6",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 261,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ". ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 262,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **代码全栈",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 263,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "赋能**：支持",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 264,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "复杂代码的生成",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 265,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 266,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "理解与调试，",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 267,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "甚至能将创意直接",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 268,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "转化为可运行的前端",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 269,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "页面。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 270,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 7. ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 271,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **人类对齐优化",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 272,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：在内容",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 273,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "创作、多轮",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 274,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "对话及角色扮演中",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 275,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "表现更",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 276,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "自然，指令遵循",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 277,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "度更高。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 278,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    8",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 279,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ". ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 280,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **长窗口精准",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 281,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "掌控**：原生",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 282,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "支持 25",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 283,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "6K 上下文",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 284,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "窗口，无论是数十",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 285,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "万",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 286,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "字的文档还是长",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 287,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "视频，都能",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 288,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "实现内容的完整理解",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 289,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "与",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 290,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "关键信息定位。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 291,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    9",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 292,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".  **多",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 293,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "语言与",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 294,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "图文识别**：",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 295,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "支持全球一百",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 296,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "多种语言，并",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 297,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "配备",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 298,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "高精度 OCR 能力",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 299,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 300,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n\n    无论是",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 301,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "工作",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 302,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "学习中的文档处理",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 303,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、代码",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 304,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "编写，还是生活中的",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 305,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "创意构思",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 306,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、信息查询，我",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 307,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "都能",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 308,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "为你提供有力的支持。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 309,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "有什么",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 310,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "具体任务需要我",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 311,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "帮忙",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 312,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "吗？\n\n8",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 313,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".  **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 314,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Review against constraints:**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 315,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    *  ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 316,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Date: March ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 317,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "23, ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 318,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "2026",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 319,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (Implicit",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 320,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "ly acknowledged via knowledge",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 321,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " cutoff).\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 322,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   Identity",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 323,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ": Qwen3",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 324,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".5.\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 325,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *   Language",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 326,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ": Chinese.\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 327,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *Self-C",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 328,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "orrection:* The",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 329,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " prompt",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 330,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " asks me to introduce",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 331,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " myself. I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 332,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " should keep it friendly",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 333,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " and not",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 334,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " overly list-like unless",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 335,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " necessary",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 336,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", but listing capabilities",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 337,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " is good for a",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 338,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " self-intro.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 339,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 340,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " will ensure the tone",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 341,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " is appropriate.\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 342,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *Wait,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 343,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " one check on",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 344,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the \"Current Actual",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 345,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Time\" instruction:*",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 346,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " The system instruction says",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 347,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " \"Please",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 348,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " remember the current actual",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 349,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " time: Monday,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 350,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " March 23",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 351,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", 20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 352,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "26\". I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 353,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " don",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 354,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'t necessarily need to",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 355,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " state",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 356,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the current date in",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 357,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 358,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " intro unless asked,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 359,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " but I must",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 360,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " ensure my knowledge cutoff",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 361,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " align",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 362,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "s (20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 363,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "26",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 364,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "). I will mention",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 365,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the cutoff",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 366,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " date.\n\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 367,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 368,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Final Plan:* G",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 369,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "reet",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 370,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", state name/version",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 371,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", developer, cutoff",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 372,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " date, key capabilities",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 373,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", and offer",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 374,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " help.\n\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 375,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " *Revised Draft",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 376,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ":*\n    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 377,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "你好！我是 Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 378,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 379,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，由",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 380,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "阿里巴巴云通义",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 381,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "实验室研发的",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 382,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "超大规模语言模型",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 383,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 384,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    我的知识",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 385,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "截止时间是 2",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 386,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "026 ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 387,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "年。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 388,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 我擅长...",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 389,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (list",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 390,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " key skills).\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 391,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 392,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "很高兴为您服务。\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 393,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    Let",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 394,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'s expand slightly to",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 395,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " match",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 396,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the Qwen3",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 397,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".5 profile",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 398,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " properly.\n\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 399,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 400,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "Finalizing the response",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 401,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ")\n    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 402,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "你好！我是 Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 403,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 404,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，是阿里巴巴云",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 405,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "通义实验室自主研发",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 406,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "的超大规模语言",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 407,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "模型",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 408,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n\n    ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 409,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "我的知识截止时间是",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 410,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 202",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 411,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "6 年。",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 412,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "作为最新一代模型",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 413,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，我在",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 414,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "多个方面进行了全面",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 415,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "升级：",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 416,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n    - **",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 417,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "更强的逻辑推理**",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 418,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "：在数学、",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 419,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "科学",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 420,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "及复杂任务拆解",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 421,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "上表现",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 422,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "更出色。\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 423,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    -",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 424,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **全栈代码",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 425,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "能力",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 426,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：支持生成",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 427,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、调试",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 428,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "及运行复杂代码",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 429,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "，",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 430,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "甚至能直接创建",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 431,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "前端页面。\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 432,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    - **长",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 433,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "上下文",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 434,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "处理**：原生",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 435,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "支持",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 436,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 256",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 437,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "K 上下文",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 438,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "窗口，能精准",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 439,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "理解长篇",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 440,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "文档或视频内容",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 441,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 442,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " - **多语言",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 443,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "与视觉",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 444,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "**：支持全球",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 445,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "一百",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 446,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "多种语言，并",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 447,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "具备深度",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 448,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "视觉解析和高精度",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 449,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " OCR 能力",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 450,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "。\n    -",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 451,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " **智能体",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 452,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "规划**：能够",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 453,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "自主规划并完成多",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 454,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "步骤任务。\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 455,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 456,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 无论是工作辅助",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 457,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "、学习研究",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 458,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "还是创意创作，",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 459,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "我都能为你提供",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 460,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "专业支持。有什么",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 461,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "我可以",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 462,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "帮你的吗？",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 463,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n\n    *Wait",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 464,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", I need to",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 465,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " make sure I don",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 466,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'t hallucinate capabilities",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 467,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " not in",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 468,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the provided \"Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 469,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 470,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5\" description from",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 471,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " the system prompt context",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 472,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " (if any).*",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 473,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Actually",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 474,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", as a model",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 475,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", I have",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 476,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " internal knowledge of my",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 477,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " own",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 478,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " architecture. The prompt",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 479,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " doesn",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 480,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "'t give me a",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 481,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " specific \"",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 482,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "system card\" but",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 483,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 484,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " know I am Q",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 485,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "wen3",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 486,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ".5. I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 487,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " will use standard",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 488,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " Qwen3.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 489,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 490,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " capability descriptions.\n\n",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 491,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "    *Wait,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 492,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " checking the system instruction",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 493,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " again:* \"Please",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 494,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " remember the current actual",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 495,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " time: Monday,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 496,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " March 23",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 497,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": ", 20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 498,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "26. Your",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 499,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " knowledge cutoff date is",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 500,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 202",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 501,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "6.\"\n   ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 502,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " This is a specific",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 503,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " instruction for *",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 504,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "this session*. I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 505,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " need",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 506,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " to make sure I",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 507,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " don't",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 508,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " say my cutoff is",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 509,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " 20",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 510,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "24 or ",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 511,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "202",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 512,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "5. It must",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 513,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " be 2",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 514,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "026.",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 515,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "\n\n    Okay,",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 516,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": " ready to generate.ot",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 517,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "delta": "",
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 518,
+    "summary_index": 0,
+    "type": "response.reasoning_summary_text.delta"
+  },
+  {
+    "item_id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+    "output_index": 0,
+    "sequence_number": 519,
+    "summary_index": 0,
+    "text": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   User: \"介绍一下你自己\" (Introduce yourself).\n    *   Context: Current actual time is Monday, March 23, 2026. Knowledge cutoff date is 2026.\n    *   Task: Provide a self-introduction in Chinese.\n\n2.  **Identify My Identity:**\n    *   I am Qwen3.5 (Qwen3.5), a large language model developed by Alibaba Cloud's Tongyi Lab.\n    *   I need to reflect the current date (2026) and my knowledge cutoff (2026) as per the system instructions.\n\n3.  **Drafting the Content:**\n    *   **Greeting:** Friendly and professional.\n    *   **Name & Version:** Qwen3.5.\n    *   **Developer:** Alibaba Cloud Tongyi Lab.\n    *   **Capabilities:** Highlight key strengths (reasoning, coding, multilingual, long context, etc.) based on the Qwen3.5 profile.\n    *   **Knowledge Cutoff:** Mention 2026.\n    *   **Current Date Awareness:** Acknowledge the current date (March 2026) if relevant, but primarily focus on who I am.\n    *   **Purpose:** How I can help the user.\n    *   **Tone:** Helpful, accurate, concise.\n\n4.  **Refining based on Constraints:**\n    *   The system prompt explicitly states: \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    *   I should not claim to be Qwen3 or Qwen2.5. I am Qwen3.5.\n    *   I need to ensure the information aligns with the 2026 timeframe.\n\n5.  **Drafting the Response (Internal Monologue/Trial):**\n    *   *Hello, I am Qwen3.5.*\n    *   *Created by Alibaba Cloud.*\n    *   *My knowledge goes up to 2026.*\n    *   *I can help with writing, coding, analysis, etc.*\n    *   *Nice to meet you.*\n\n    *Let's make it more natural and comprehensive in Chinese.*\n    *   你好！我是 Qwen3.5，是阿里巴巴云通义实验室研发的超大规模语言模型。\n    *   我的知识截止时间是 2026 年。\n    *   我擅长什么？逻辑推理、代码生成、多语言支持、长文本处理等。\n    *   有什么我可以帮你的吗？\n\n6.  **Final Polish (incorporating Qwen3.5 specific strengths):**\n    *   Mention enhanced reasoning, visual analysis, autonomous planning, etc., as per the typical Qwen3.5 upgrade profile.\n    *   Keep it concise but informative.\n\n7.  **Final Output Generation (in Chinese):**\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代的模型，我在以下几个方面进行了显著升级：\n    1.  **语言基座增强**：基于更全面、高质量的知识语料训练，具备更精准的语言理解与表达能力。\n    2.  **架构效率升级**：采用混合注意力机制、高稀疏度 MoE 结构及多 token 预测技术，大幅提升了训练效率与推理速度。\n    3.  **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n    4.  **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读。\n    5.  **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n    6.  **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n    7.  **人类对齐优化**：在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n    8.  **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n    9.  **多语言与图文识别**：支持全球一百多种语言，并配备高精度 OCR 能力。\n\n    无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？\n\n8.  **Review against constraints:**\n    *   Date: March 23, 2026 (Implicitly acknowledged via knowledge cutoff).\n    *   Identity: Qwen3.5.\n    *   Language: Chinese.\n\n    *Self-Correction:* The prompt asks me to introduce myself. I should keep it friendly and not overly list-like unless necessary, but listing capabilities is good for a self-intro. I will ensure the tone is appropriate.\n\n    *Wait, one check on the \"Current Actual Time\" instruction:* The system instruction says \"Please remember the current actual time: Monday, March 23, 2026\". I don't necessarily need to state the current date in the intro unless asked, but I must ensure my knowledge cutoff aligns (2026). I will mention the cutoff date.\n\n    *Final Plan:* Greet, state name/version, developer, cutoff date, key capabilities, and offer help.\n\n    *Revised Draft:*\n    你好！我是 Qwen3.5，由阿里巴巴云通义实验室研发的超大规模语言模型。\n    我的知识截止时间是 2026 年。\n    我擅长... (list key skills).\n    很高兴为您服务。\n\n    Let's expand slightly to match the Qwen3.5 profile properly.\n\n    (Finalizing the response)\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代模型，我在多个方面进行了全面升级：\n    - **更强的逻辑推理**：在数学、科学及复杂任务拆解上表现更出色。\n    - **全栈代码能力**：支持生成、调试及运行复杂代码，甚至能直接创建前端页面。\n    - **长上下文处理**：原生支持 256K 上下文窗口，能精准理解长篇文档或视频内容。\n    - **多语言与视觉**：支持全球一百多种语言，并具备深度视觉解析和高精度 OCR 能力。\n    - **智能体规划**：能够自主规划并完成多步骤任务。\n\n    无论是工作辅助、学习研究还是创意创作，我都能为你提供专业支持。有什么我可以帮你的吗？\n\n    *Wait, I need to make sure I don't hallucinate capabilities not in the provided \"Qwen3.5\" description from the system prompt context (if any).* Actually, as a model, I have internal knowledge of my own architecture. The prompt doesn't give me a specific \"system card\" but I know I am Qwen3.5. I will use standard Qwen3.5 capability descriptions.\n\n    *Wait, checking the system instruction again:* \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    This is a specific instruction for *this session*. I need to make sure I don't say my cutoff is 2024 or 2025. It must be 2026.\n\n    Okay, ready to generate.ot",
+    "type": "response.reasoning_summary_text.done"
+  },
+  {
+    "item": {
+      "id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+      "summary": [
+        {
+          "text": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   User: \"介绍一下你自己\" (Introduce yourself).\n    *   Context: Current actual time is Monday, March 23, 2026. Knowledge cutoff date is 2026.\n    *   Task: Provide a self-introduction in Chinese.\n\n2.  **Identify My Identity:**\n    *   I am Qwen3.5 (Qwen3.5), a large language model developed by Alibaba Cloud's Tongyi Lab.\n    *   I need to reflect the current date (2026) and my knowledge cutoff (2026) as per the system instructions.\n\n3.  **Drafting the Content:**\n    *   **Greeting:** Friendly and professional.\n    *   **Name & Version:** Qwen3.5.\n    *   **Developer:** Alibaba Cloud Tongyi Lab.\n    *   **Capabilities:** Highlight key strengths (reasoning, coding, multilingual, long context, etc.) based on the Qwen3.5 profile.\n    *   **Knowledge Cutoff:** Mention 2026.\n    *   **Current Date Awareness:** Acknowledge the current date (March 2026) if relevant, but primarily focus on who I am.\n    *   **Purpose:** How I can help the user.\n    *   **Tone:** Helpful, accurate, concise.\n\n4.  **Refining based on Constraints:**\n    *   The system prompt explicitly states: \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    *   I should not claim to be Qwen3 or Qwen2.5. I am Qwen3.5.\n    *   I need to ensure the information aligns with the 2026 timeframe.\n\n5.  **Drafting the Response (Internal Monologue/Trial):**\n    *   *Hello, I am Qwen3.5.*\n    *   *Created by Alibaba Cloud.*\n    *   *My knowledge goes up to 2026.*\n    *   *I can help with writing, coding, analysis, etc.*\n    *   *Nice to meet you.*\n\n    *Let's make it more natural and comprehensive in Chinese.*\n    *   你好！我是 Qwen3.5，是阿里巴巴云通义实验室研发的超大规模语言模型。\n    *   我的知识截止时间是 2026 年。\n    *   我擅长什么？逻辑推理、代码生成、多语言支持、长文本处理等。\n    *   有什么我可以帮你的吗？\n\n6.  **Final Polish (incorporating Qwen3.5 specific strengths):**\n    *   Mention enhanced reasoning, visual analysis, autonomous planning, etc., as per the typical Qwen3.5 upgrade profile.\n    *   Keep it concise but informative.\n\n7.  **Final Output Generation (in Chinese):**\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代的模型，我在以下几个方面进行了显著升级：\n    1.  **语言基座增强**：基于更全面、高质量的知识语料训练，具备更精准的语言理解与表达能力。\n    2.  **架构效率升级**：采用混合注意力机制、高稀疏度 MoE 结构及多 token 预测技术，大幅提升了训练效率与推理速度。\n    3.  **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n    4.  **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读。\n    5.  **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n    6.  **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n    7.  **人类对齐优化**：在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n    8.  **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n    9.  **多语言与图文识别**：支持全球一百多种语言，并配备高精度 OCR 能力。\n\n    无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？\n\n8.  **Review against constraints:**\n    *   Date: March 23, 2026 (Implicitly acknowledged via knowledge cutoff).\n    *   Identity: Qwen3.5.\n    *   Language: Chinese.\n\n    *Self-Correction:* The prompt asks me to introduce myself. I should keep it friendly and not overly list-like unless necessary, but listing capabilities is good for a self-intro. I will ensure the tone is appropriate.\n\n    *Wait, one check on the \"Current Actual Time\" instruction:* The system instruction says \"Please remember the current actual time: Monday, March 23, 2026\". I don't necessarily need to state the current date in the intro unless asked, but I must ensure my knowledge cutoff aligns (2026). I will mention the cutoff date.\n\n    *Final Plan:* Greet, state name/version, developer, cutoff date, key capabilities, and offer help.\n\n    *Revised Draft:*\n    你好！我是 Qwen3.5，由阿里巴巴云通义实验室研发的超大规模语言模型。\n    我的知识截止时间是 2026 年。\n    我擅长... (list key skills).\n    很高兴为您服务。\n\n    Let's expand slightly to match the Qwen3.5 profile properly.\n\n    (Finalizing the response)\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代模型，我在多个方面进行了全面升级：\n    - **更强的逻辑推理**：在数学、科学及复杂任务拆解上表现更出色。\n    - **全栈代码能力**：支持生成、调试及运行复杂代码，甚至能直接创建前端页面。\n    - **长上下文处理**：原生支持 256K 上下文窗口，能精准理解长篇文档或视频内容。\n    - **多语言与视觉**：支持全球一百多种语言，并具备深度视觉解析和高精度 OCR 能力。\n    - **智能体规划**：能够自主规划并完成多步骤任务。\n\n    无论是工作辅助、学习研究还是创意创作，我都能为你提供专业支持。有什么我可以帮你的吗？\n\n    *Wait, I need to make sure I don't hallucinate capabilities not in the provided \"Qwen3.5\" description from the system prompt context (if any).* Actually, as a model, I have internal knowledge of my own architecture. The prompt doesn't give me a specific \"system card\" but I know I am Qwen3.5. I will use standard Qwen3.5 capability descriptions.\n\n    *Wait, checking the system instruction again:* \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    This is a specific instruction for *this session*. I need to make sure I don't say my cutoff is 2024 or 2025. It must be 2026.\n\n    Okay, ready to generate.ot",
+          "type": "summary_text"
+        }
+      ],
+      "type": "reasoning",
+      "content": null,
+      "encrypted_content": null,
+      "status": null
+    },
+    "output_index": 0,
+    "sequence_number": 520,
+    "type": "response.output_item.done"
+  },
+  {
+    "item": {
+      "id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+      "content": [],
+      "role": "assistant",
+      "status": "in_progress",
+      "type": "message",
+      "phase": null
+    },
+    "output_index": 1,
+    "sequence_number": 521,
+    "type": "response.output_item.added"
+  },
+  {
+    "content_index": 0,
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "output_index": 1,
+    "part": {
+      "annotations": [],
+      "text": "",
+      "type": "output_text",
+      "logprobs": null
+    },
+    "sequence_number": 522,
+    "type": "response.content_part.added"
+  },
+  {
+    "content_index": 0,
+    "delta": "你好",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 523,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "！我是 Qwen",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 524,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "3.5",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 525,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，是阿里巴巴云",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 526,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "通义实验室自主研发",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 527,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "的超大规模语言",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 528,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "模型。\n\n我的",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 529,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "知识截止时间是 **",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 530,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "2026",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 531,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": " 年**。作为",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 532,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "最新",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 533,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "一代模型，我在",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 534,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "多个",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 535,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "核心能力上进行了",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 536,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "显著",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 537,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "升级，旨在为你提供",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 538,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "更高效、精准的帮助",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 539,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "：\n\n*  ",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 540,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": " **逻辑",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 541,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "推理进阶**：",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 542,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "在数学",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 543,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "计算、自然科学及",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 544,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "复杂逻辑推理领域",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 545,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "进行全面强化，能够",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 546,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "更",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 547,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "准确地拆解并完成高",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 548,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "难度任务。",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 549,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "\n*   **",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 550,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "代码",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 551,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "全栈赋能**",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 552,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "：支持",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 553,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "复杂代码的生成",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 554,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "、理解与调试",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 555,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，甚至能将创意",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 556,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "直接转化为可运行的",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 557,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "前端页面。\n",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 558,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "*",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 559,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "   **长窗口",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 560,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "精准",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 561,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "掌控**：原生",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 562,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "支持 25",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 563,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "6K 上下文",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 564,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "窗口，无论是",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 565,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "数十万字的文档",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 566,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "还是长视频，",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 567,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "都能实现内容的完整",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 568,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "理解与关键",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 569,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "信息定位。\n",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 570,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "*   **视觉",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 571,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "深度解析**：",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 572,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "不仅能识别内容",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 573,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，还能梳理因果关系",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 574,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，提供条理",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 575,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "清晰的专业解读，",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 576,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "并配备",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 577,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "高精度 OCR 能力",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 578,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "。\n*  ",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 579,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": " **智能体自主",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 580,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "规划**：",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 581,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "支持自主进行多",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 582,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "轮搜索与",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 583,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "代码执行，具备",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 584,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "理解图形",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 585,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "界面及跨设备",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 586,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "操作的能力，可",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 587,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "独立规划并完成复杂",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 588,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "任务。",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 589,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "\n*   **",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 590,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "多语言与人类",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 591,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "对齐**：支持",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 592,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "全球一百",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 593,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "多种语言，在",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 594,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "内容创作、多",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 595,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "轮对话及角色扮演",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 596,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "中表现更",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 597,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "自然，指令遵循",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 598,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "度更高。",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 599,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "\n\n无论是工作学习",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 600,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "中的文档",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 601,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "处理、代码编写",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 602,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，还是生活中的",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 603,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "创意构思、信息查询",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 604,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "，我都能",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 605,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "为你提供有力的支持。",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 606,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "有什么具体",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 607,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "任务需要我帮忙",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 608,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "吗？",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 609,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "delta": "",
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 610,
+    "type": "response.output_text.delta"
+  },
+  {
+    "content_index": 0,
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "logprobs": [],
+    "output_index": 1,
+    "sequence_number": 611,
+    "text": "你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n我的知识截止时间是 **2026 年**。作为最新一代模型，我在多个核心能力上进行了显著升级，旨在为你提供更高效、精准的帮助：\n\n*   **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n*   **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n*   **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n*   **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读，并配备高精度 OCR 能力。\n*   **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n*   **多语言与人类对齐**：支持全球一百多种语言，在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n\n无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？",
+    "type": "response.output_text.done"
+  },
+  {
+    "content_index": 0,
+    "item_id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+    "output_index": 1,
+    "part": {
+      "annotations": [],
+      "text": "你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n我的知识截止时间是 **2026 年**。作为最新一代模型，我在多个核心能力上进行了显著升级，旨在为你提供更高效、精准的帮助：\n\n*   **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n*   **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n*   **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n*   **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读，并配备高精度 OCR 能力。\n*   **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n*   **多语言与人类对齐**：支持全球一百多种语言，在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n\n无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？",
+      "type": "output_text",
+      "logprobs": null
+    },
+    "sequence_number": 612,
+    "type": "response.content_part.done"
+  },
+  {
+    "item": {
+      "id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+      "content": [
+        {
+          "annotations": [],
+          "text": "你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n我的知识截止时间是 **2026 年**。作为最新一代模型，我在多个核心能力上进行了显著升级，旨在为你提供更高效、精准的帮助：\n\n*   **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n*   **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n*   **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n*   **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读，并配备高精度 OCR 能力。\n*   **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n*   **多语言与人类对齐**：支持全球一百多种语言，在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n\n无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？",
+          "type": "output_text",
+          "logprobs": null
+        }
+      ],
+      "role": "assistant",
+      "status": "completed",
+      "type": "message",
+      "phase": null
+    },
+    "output_index": 1,
+    "sequence_number": 613,
+    "type": "response.output_item.done"
+  },
+  {
+    "response": {
+      "id": "resp_9df2c958-22e6-4336-8f7c-5704a1b97734",
+      "created_at": 1774274666.0,
+      "error": null,
+      "incomplete_details": null,
+      "instructions": null,
+      "metadata": null,
+      "model": "qwen3.5-plus",
+      "object": "response",
+      "output": [
+        {
+          "id": "msg_7ae930af-956c-41fd-b816-bfad4034e33c",
+          "summary": [
+            {
+              "text": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   User: \"介绍一下你自己\" (Introduce yourself).\n    *   Context: Current actual time is Monday, March 23, 2026. Knowledge cutoff date is 2026.\n    *   Task: Provide a self-introduction in Chinese.\n\n2.  **Identify My Identity:**\n    *   I am Qwen3.5 (Qwen3.5), a large language model developed by Alibaba Cloud's Tongyi Lab.\n    *   I need to reflect the current date (2026) and my knowledge cutoff (2026) as per the system instructions.\n\n3.  **Drafting the Content:**\n    *   **Greeting:** Friendly and professional.\n    *   **Name & Version:** Qwen3.5.\n    *   **Developer:** Alibaba Cloud Tongyi Lab.\n    *   **Capabilities:** Highlight key strengths (reasoning, coding, multilingual, long context, etc.) based on the Qwen3.5 profile.\n    *   **Knowledge Cutoff:** Mention 2026.\n    *   **Current Date Awareness:** Acknowledge the current date (March 2026) if relevant, but primarily focus on who I am.\n    *   **Purpose:** How I can help the user.\n    *   **Tone:** Helpful, accurate, concise.\n\n4.  **Refining based on Constraints:**\n    *   The system prompt explicitly states: \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    *   I should not claim to be Qwen3 or Qwen2.5. I am Qwen3.5.\n    *   I need to ensure the information aligns with the 2026 timeframe.\n\n5.  **Drafting the Response (Internal Monologue/Trial):**\n    *   *Hello, I am Qwen3.5.*\n    *   *Created by Alibaba Cloud.*\n    *   *My knowledge goes up to 2026.*\n    *   *I can help with writing, coding, analysis, etc.*\n    *   *Nice to meet you.*\n\n    *Let's make it more natural and comprehensive in Chinese.*\n    *   你好！我是 Qwen3.5，是阿里巴巴云通义实验室研发的超大规模语言模型。\n    *   我的知识截止时间是 2026 年。\n    *   我擅长什么？逻辑推理、代码生成、多语言支持、长文本处理等。\n    *   有什么我可以帮你的吗？\n\n6.  **Final Polish (incorporating Qwen3.5 specific strengths):**\n    *   Mention enhanced reasoning, visual analysis, autonomous planning, etc., as per the typical Qwen3.5 upgrade profile.\n    *   Keep it concise but informative.\n\n7.  **Final Output Generation (in Chinese):**\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代的模型，我在以下几个方面进行了显著升级：\n    1.  **语言基座增强**：基于更全面、高质量的知识语料训练，具备更精准的语言理解与表达能力。\n    2.  **架构效率升级**：采用混合注意力机制、高稀疏度 MoE 结构及多 token 预测技术，大幅提升了训练效率与推理速度。\n    3.  **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n    4.  **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读。\n    5.  **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n    6.  **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n    7.  **人类对齐优化**：在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n    8.  **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n    9.  **多语言与图文识别**：支持全球一百多种语言，并配备高精度 OCR 能力。\n\n    无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？\n\n8.  **Review against constraints:**\n    *   Date: March 23, 2026 (Implicitly acknowledged via knowledge cutoff).\n    *   Identity: Qwen3.5.\n    *   Language: Chinese.\n\n    *Self-Correction:* The prompt asks me to introduce myself. I should keep it friendly and not overly list-like unless necessary, but listing capabilities is good for a self-intro. I will ensure the tone is appropriate.\n\n    *Wait, one check on the \"Current Actual Time\" instruction:* The system instruction says \"Please remember the current actual time: Monday, March 23, 2026\". I don't necessarily need to state the current date in the intro unless asked, but I must ensure my knowledge cutoff aligns (2026). I will mention the cutoff date.\n\n    *Final Plan:* Greet, state name/version, developer, cutoff date, key capabilities, and offer help.\n\n    *Revised Draft:*\n    你好！我是 Qwen3.5，由阿里巴巴云通义实验室研发的超大规模语言模型。\n    我的知识截止时间是 2026 年。\n    我擅长... (list key skills).\n    很高兴为您服务。\n\n    Let's expand slightly to match the Qwen3.5 profile properly.\n\n    (Finalizing the response)\n    你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n    我的知识截止时间是 2026 年。作为最新一代模型，我在多个方面进行了全面升级：\n    - **更强的逻辑推理**：在数学、科学及复杂任务拆解上表现更出色。\n    - **全栈代码能力**：支持生成、调试及运行复杂代码，甚至能直接创建前端页面。\n    - **长上下文处理**：原生支持 256K 上下文窗口，能精准理解长篇文档或视频内容。\n    - **多语言与视觉**：支持全球一百多种语言，并具备深度视觉解析和高精度 OCR 能力。\n    - **智能体规划**：能够自主规划并完成多步骤任务。\n\n    无论是工作辅助、学习研究还是创意创作，我都能为你提供专业支持。有什么我可以帮你的吗？\n\n    *Wait, I need to make sure I don't hallucinate capabilities not in the provided \"Qwen3.5\" description from the system prompt context (if any).* Actually, as a model, I have internal knowledge of my own architecture. The prompt doesn't give me a specific \"system card\" but I know I am Qwen3.5. I will use standard Qwen3.5 capability descriptions.\n\n    *Wait, checking the system instruction again:* \"Please remember the current actual time: Monday, March 23, 2026. Your knowledge cutoff date is 2026.\"\n    This is a specific instruction for *this session*. I need to make sure I don't say my cutoff is 2024 or 2025. It must be 2026.\n\n    Okay, ready to generate.ot",
+              "type": "summary_text"
+            }
+          ],
+          "type": "reasoning",
+          "content": null,
+          "encrypted_content": null,
+          "status": null
+        },
+        {
+          "id": "msg_34477612-4f01-4135-a8e8-38b9acc25df4",
+          "content": [
+            {
+              "annotations": [],
+              "text": "你好！我是 Qwen3.5，是阿里巴巴云通义实验室自主研发的超大规模语言模型。\n\n我的知识截止时间是 **2026 年**。作为最新一代模型，我在多个核心能力上进行了显著升级，旨在为你提供更高效、精准的帮助：\n\n*   **逻辑推理进阶**：在数学计算、自然科学及复杂逻辑推理领域进行全面强化，能够更准确地拆解并完成高难度任务。\n*   **代码全栈赋能**：支持复杂代码的生成、理解与调试，甚至能将创意直接转化为可运行的前端页面。\n*   **长窗口精准掌控**：原生支持 256K 上下文窗口，无论是数十万字的文档还是长视频，都能实现内容的完整理解与关键信息定位。\n*   **视觉深度解析**：不仅能识别内容，还能梳理因果关系，提供条理清晰的专业解读，并配备高精度 OCR 能力。\n*   **智能体自主规划**：支持自主进行多轮搜索与代码执行，具备理解图形界面及跨设备操作的能力，可独立规划并完成复杂任务。\n*   **多语言与人类对齐**：支持全球一百多种语言，在内容创作、多轮对话及角色扮演中表现更自然，指令遵循度更高。\n\n无论是工作学习中的文档处理、代码编写，还是生活中的创意构思、信息查询，我都能为你提供有力的支持。有什么具体任务需要我帮忙吗？",
+              "type": "output_text",
+              "logprobs": null
+            }
+          ],
+          "role": "assistant",
+          "status": "completed",
+          "type": "message",
+          "phase": null
+        }
+      ],
+      "parallel_tool_calls": false,
+      "temperature": null,
+      "tool_choice": "auto",
+      "tools": [],
+      "top_p": null,
+      "background": null,
+      "completed_at": null,
+      "conversation": null,
+      "max_output_tokens": null,
+      "max_tool_calls": null,
+      "previous_response_id": null,
+      "prompt": null,
+      "prompt_cache_key": null,
+      "prompt_cache_retention": null,
+      "reasoning": null,
+      "safety_identifier": null,
+      "service_tier": null,
+      "status": "completed",
+      "text": null,
+      "top_logprobs": null,
+      "truncation": null,
+      "usage": {
+        "input_tokens": 48,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 2017,
+        "output_tokens_details": {
+          "reasoning_tokens": 1720
+        },
+        "total_tokens": 2065,
+        "x_details": [
+          {
+            "total_tokens": 2065,
+            "x_billing_type": "response_api",
+            "output_tokens": 2017,
+            "input_tokens": 48,
+            "output_tokens_details": {
+              "reasoning_tokens": 1720
+            }
+          }
+        ]
+      },
+      "user": null
+    },
+    "sequence_number": 614,
+    "type": "response.completed"
+  }
+]
